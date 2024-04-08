@@ -114,7 +114,7 @@ class UserController extends Controller
             'father_name' => 'required',
             'mother_name' => 'required',
             'alamat'   => 'required',
-            'password' => 'required',
+            // 'password' => 'required',
             'jenis_kelamin' => 'required'
 
             // tambahkan validasi lain sesuai kebutuhan
@@ -132,7 +132,7 @@ class UserController extends Controller
             'father_name.required' => 'Nama ayah dibutuhkan',
             'mother_name.required' => 'Nama Ibu dibutuhkan',
             'alamat.required'   => 'Alamat dibutuhkan',
-            'password.required' => 'Password dibutuhkan',
+            // 'password.required' => 'Password dibutuhkan',
             'jenis_kelamin.required' => 'Jenis kelamin dibutuhkan'
             // tambahkan pesan kesalahan lain sesuai kebutuhan
         ]);

@@ -140,7 +140,7 @@
                     });
                     iziToast.hide({}, document.querySelector('.iziToast'));
                 }, complete: function() {
-                    $("#formDataSiswa").trigger('reset');
+                    // $("#formDataSiswa").trigger('reset');
 
                 }
             })

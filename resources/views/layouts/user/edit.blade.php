@@ -20,7 +20,7 @@
                         </div>
                         <div class="col-md-6">
                             <label for="tanggalLahir" class="form-label">Tanggal Lahir</label>
-                            <input type="date" id="tanggalLahir" class="form-control"  required value="{{ $data->tanggal_lahir }}">
+                            <input type="date" id="tanggalLahir" class="form-control" name="tanggal_lahir" required value="{{ $data->tanggal_lahir }}">
                         </div>
                     </div>
                     <div class="row">
@@ -133,7 +133,7 @@
                         message: errorHtml,
                         position: 'topRight'
                     });
-                    iziToast.hide({}, document.querySelector('.iziToast'));
+                    // iziToast.hide({}, document.querySelector('.iziToast'));
                 }, complete: function() {
                     $("#formDataSiswa").trigger('reset');
 
