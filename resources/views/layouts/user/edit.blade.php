@@ -1,35 +1,36 @@
 @extends('layouts.Master')
 @section('title'){{ 'Edit Data siswa' }}@endsection
 @section('content')
-<h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Data siswa /</span> Edit data siswa</h4>
+<h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Data Pengguna / Edit data pegguna /</span> {{ $data->name }} </h4>
 <div class="row">
     <div class="col-md-12">
         <div class="card mb-4">
-            <h5 class="card-header">Edit data siswa</h5>
+            <h5 class="card-header">Edit data pengguna</h5>
 
             <form id="formDataSiswa">
+                <input type="hidden" name="id" id="" value="{{ $data->id }}">
                 @csrf
                 <div class="card-body">
                     <a style="float: right;" href="{{ route('user-index') }}" class="btn btn-primary"> Kembali</a>
                     <br><br>
                     <div class="row">
                         <div class="col-md-6">
-                            <label for="namaSiswa" class="form-label">Nama Siswa/i</label>
-                            <input type="text" id="namaSiswa" class="form-control" name="name" required placeholder="Masukan nama siswa/i" value="{{ old('name') }}">
+                            <label for="namaSiswa" class="form-label">Nama </label>
+                            <input type="text" id="namaSiswa" class="form-control" name="name" required placeholder="Masukan nama pengguna" value="{{ $data->name }}">
                         </div>
                         <div class="col-md-6">
                             <label for="tanggalLahir" class="form-label">Tanggal Lahir</label>
-                            <input type="date" id="tanggalLahir" class="form-control" name="tanggal_lahir" required value="{{ old('tanggal_lahir') }}">
+                            <input type="date" id="tanggalLahir" class="form-control"  required value="{{ $data->tanggal_lahir }}">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
                             <label for="namaAyah" class="form-label">Nama Ayah</label>
-                            <input type="text" id="namaAyah" class="form-control" name="father_name" required placeholder="Masukan nama ayah" value="{{ old('father_name') }}">
+                            <input type="text" id="namaAyah" class="form-control" name="father_name" required placeholder="Masukan nama ayah" value="{{ $data->father_name }}">
                         </div>
                         <div class="col-md-6">
                             <label for="nama_ibu" class="form-label">Nama ibu</label>
-                            <input type="text"  id="nama_ibu" class="form-control" name="mother_name" placeholder="Masukan nama ibu" required value="{{ old('mother_name') }}">
+                            <input type="text"  id="nama_ibu" class="form-control" name="mother_name" placeholder="Masukan nama ibu" required value="{{ $data->mother_name }}">
                         </div>
                     </div>
                     <div class="row">
@@ -37,13 +38,13 @@
                             <label for="jenis_kelamin" class="form-label">Jenis Kelamin</label>
                             <select name="jenis_kelamin" id="jenis_kelamin" required class="form-control">
                                 <option value="">-- Pilih Jenis Kelamin --</option>
-                                <option value="L" {{ old('jenis_kelamin') == 'L' ? 'selected' : '' }}>Laki Laki</option>
-                                <option value="P" {{ old('father_name')  == 'P' ? 'selected' : ''}}>Perempuan</option>
+                                <option value="L" {{ $data->jenis_kelamin == 'L' ? 'selected' : '' }}>Laki Laki</option>
+                                <option value="P" {{ $data->jenis_kelamin  == 'P' ? 'selected' : ''}}>Perempuan</option>
                             </select>
                         </div>
                         <div class="col-md-6">
                             <label for="alamat" class="form-label">Alamat</label>
-                            <input type="text"  id="alamat" class="form-control" name="alamat" placeholder="Masukan alamat detail" required value="{{ old('alamat') }}">
+                            <input type="text"  id="alamat" class="form-control" name="alamat" placeholder="Masukan alamat detail" required value="{{ $data->alamat }}">
                         </div>
                     </div>
 
@@ -53,21 +54,21 @@
                     <div class="row">
                         <div class="col-md-6">
                             <label for="username" class="form-label">Username</label>
-                            <input type="text" id="username" class="form-control" name="username" required placeholder="Masukan username" value="{{ old('username') }}">
+                            <input type="text" id="username" class="form-control" name="username" required placeholder="Masukan username" value="{{ $data->username }}">
                         </div>
                         <div class="col-md-6">
                             <label for="email" class="form-label">Email</label>
-                            <input type="email" id="email" class="form-control" name="email" required placeholder="exmaple@ex.com" value="{{ old('email') }}">
+                            <input type="email" id="email" class="form-control" name="email" required placeholder="exmaple@ex.com" value="{{ $data->email }}">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
                             <label for="password" class="form-label">Password</label>
-                            <input type="password" id="password" class="form-control" name="password" required placeholder="xxx">
+                            <input type="password" id="password" class="form-control" name="password"  placeholder="xxx">
                         </div>
                         <div class="col-md-6">
                             <label for="confirm_password" class="form-label">Konfirmasi Password</label>
-                            <input type="confirm_password" id="confirm_password" class="form-control" name="confirm_password" required placeholder="xxxx">
+                            <input type="password" id="confirm_password" class="form-control" name="confirm_password"  placeholder="xxxx">
                         </div>
                     </div>
                 </div>
@@ -101,16 +102,10 @@
             confirmPasswordInput.focus();
         }else {
             $.ajax({
-                url : "{{ route('user-store') }}",
+                url : "{{ route('user-update') }}",
                 type: "POST",
                 data: $(this).serialize(),
-                beforeSend: function() {
-                    iziToast.info({
-                        title: 'Loading',
-                        message: 'Please wait...',
-                        position: 'topRight'
-                    });
-                }, success : function(s) {
+                 success : function(s) {
                     if(s.status == true) {
                         iziToast.success({
                             title: 'Sukses',

@@ -94,9 +94,11 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(User $user)
+    public function edit(User $user,$id)
     {
-        //
+        $data = User::find($id);
+        // dd($data);
+        return view('layouts.user.edit',compact("data"));
     }
 
     /**
@@ -104,7 +106,59 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'username' => 'required|max:255',
+            'tanggal_lahir' => 'required',
+            'father_name' => 'required',
+            'mother_name' => 'required',
+            'alamat'   => 'required',
+            'password' => 'required',
+            'jenis_kelamin' => 'required'
+
+            // tambahkan validasi lain sesuai kebutuhan
+        ], [
+            'name.required' => 'Nama dibutuhkan.',
+            'name.string' => 'Name harus berupa huruf.',
+            'name.max' => 'Nama tidak boleh lebih dari 255 karakter.',
+            'email.required' => 'Email dibutuhkan.',
+            'email.email' => 'Format email salah.',
+            // 'email.unique' => 'Email telah digunakan.',
+            'email.max' => 'Email tidak boleh lebih dari 255 karakter.',
+            // 'username.unique' => 'Nama Pengguna telah digunakan.',
+            'username.required' => 'Nama Pengguna dibutuhkan',
+            'tanggal_lahir.required' => 'Tanggal lahir dibutuhkan',
+            'father_name.required' => 'Nama ayah dibutuhkan',
+            'mother_name.required' => 'Nama Ibu dibutuhkan',
+            'alamat.required'   => 'Alamat dibutuhkan',
+            'password.required' => 'Password dibutuhkan',
+            'jenis_kelamin.required' => 'Jenis kelamin dibutuhkan'
+            // tambahkan pesan kesalahan lain sesuai kebutuhan
+        ]);
+        if ($validator->fails()) {
+            return response()->json(['errors' => $validator->errors()], 422);
+        }
+
+        $data_update = [
+            'name' => $request->name,
+            'username' => $request->username,
+            'email' => $request->email,
+            'tanggal_lahir' => $request->tanggal_lahir,
+            'jenis_kelamin' => $request->jenis_kelamin,
+            'father_name' => $request->father_name,
+            'mother_name' => $request->mother_name,
+            'alamat' => $request->alamat,
+            // 'password' => Hash::make($request->password),
+        ];
+
+        if($request->password) {
+            array_push($data_update,['password' => Hash::make($request->password)]);
+        }
+        User::where('id',$request->id)->update($data_update);
+
+        return response()->json(['status'=> TRUE,'pesan' => 'Data berhasil diperbaharui']);
+
     }
 
     /**
@@ -120,7 +174,7 @@ class UserController extends Controller
         $roles = $user->getRoleNames()->join(', ');
 
         if($roles == 'admin'){
-            $data  = User::all();
+            $data  = User::where('name','!=','Admin')->get();
         }else {
             $data = User::all();
         }
@@ -129,7 +183,9 @@ class UserController extends Controller
         ->addIndexColumn()
         ->addColumn('aksi',function($row) {
 
-            $button = "<a href='#'  class='btn btn-primary btn-sm'>Edit Siswa</a>";
+            $button = "<a href='".route('user-edit',['id' => $row->id])."'  class='btn btn-primary btn-sm'>Edit</a>";
+            $button .= '&nbsp;';
+            $button .= "<a href='".route('user-edit',['id' => $row->id])."'  class='btn btn-danger btn-sm'>Hapus</a>";
             return $button;
         })
         ->rawColumns(['aksi'])

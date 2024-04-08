@@ -1,11 +1,11 @@
 @extends('layouts.Master')
 @section('title'){{ 'Tambah Data siswa' }}@endsection
 @section('content')
-<h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Data siswa /</span> Tambah data siswa</h4>
+<h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Data Pengguna /</span> Tambah data pengguna</h4>
 <div class="row">
     <div class="col-md-12">
         <div class="card mb-4">
-            <h5 class="card-header">Tambah data siswa</h5>
+            <h5 class="card-header">Tambah data pengguna</h5>
 
             <form id="formDataSiswa">
                 @csrf
@@ -14,8 +14,8 @@
                     <br><br>
                     <div class="row">
                         <div class="col-md-6">
-                            <label for="namaSiswa" class="form-label">Nama Siswa/i</label>
-                            <input type="text" id="namaSiswa" class="form-control" name="name" required placeholder="Masukan nama siswa/i" value="{{ old('name') }}">
+                            <label for="namaSiswa" class="form-label">Nama Pengguna</label>
+                            <input type="text" id="namaSiswa" class="form-control" name="name" required placeholder="Masukan nama pegguna" value="{{ old('name') }}">
                         </div>
                         <div class="col-md-6">
                             <label for="tanggalLahir" class="form-label">Tanggal Lahir</label>

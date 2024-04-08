@@ -48,7 +48,7 @@ class RolesAndPermissionSeeder extends Seeder
             'mother_name' => 'Alicia',
             'alamat' => 'Ring Road',
             'jenis_kelamin' => 'L',
-            'tanggal_lahir' => '22-02-1992',
+            'tanggal_lahir' => '1992-11-22',
         ]);
         $admin->assignRole('admin');
 
@@ -62,7 +62,7 @@ class RolesAndPermissionSeeder extends Seeder
             'mother_name' => 'Alexia',
             'alamat' => 'Ring Road',
             'jenis_kelamin' => 'L',
-            'tanggal_lahir' => '22-02-2001',
+            'tanggal_lahir' => '2001-01-01',
         ]);
         $teacher->assignRole('teacher');
 
@@ -76,7 +76,7 @@ class RolesAndPermissionSeeder extends Seeder
             'mother_name' => 'Veriale',
             'alamat' => 'Ring Road',
             'jenis_kelamin' => 'L',
-            'tanggal_lahir' => '215-02-2001',
+            'tanggal_lahir' => '2001-02-02',
         ]);
         $student->assignRole('student');
 

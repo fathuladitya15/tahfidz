@@ -27,6 +27,7 @@ Route::prefix('user')->group(function() {
     Route::post('store',[UserController::class,'store'])->name('user-store');
     Route::get('data',[UserController::class,'data'])->name('user-data');
     Route::get('edit/{id}',[UserController::class,'edit'])->name('user-edit');
+    Route::post('update',[UserController::class,'update'])->name('user-update');
 });
 Route::prefix('hafalan')->group(function() {
     Route::get('index',[HafalanController::class,'index'])->name('hafalan-index');

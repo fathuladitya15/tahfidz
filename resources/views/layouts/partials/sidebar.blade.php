@@ -81,10 +81,10 @@
                     <span class="menu-header-text">Pages</span>
                 </li>
                 @if(in_array(Auth::user()->getRoleNames()->join(', '),['admin','teacher'] ))
-                    <li class="menu-item {{ menuActive(['user-index','user-create']) }}">
+                    <li class="menu-item {{ menuActive(['user-index','user-create','user-edit']) }}">
                         <a href="{{ route('user-index') }}" class="menu-link">
                         <i class="menu-icon tf-icons bx bx-user-circle"></i>
-                        <div data-i18n="Analytics">Data Siswa</div>
+                        <div data-i18n="Analytics">Data Pengguna</div>
                         </a>
                     </li>
                 @endrole
