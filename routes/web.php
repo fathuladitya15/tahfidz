@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\HafalanController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProfileController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,7 +22,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::prefix('home')->group(function() {
+    Route::get('index',[HomeController::class,'index'])->name('home');
+    Route::get('profile',[ProfileController::class,'index'])->name('profile');
+});
 Route::prefix('user')->group(function() {
     Route::get('index',[UserController::class,'index'])->name('user-index');
     Route::get('create',[UserController::class,'create'])->name('user-create');
