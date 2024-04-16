@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
+use DataTables;
 use Illuminate\Http\Request;
+use App\Models\Hafalan;
 
 class HafalanController extends Controller
 {
@@ -64,5 +67,26 @@ class HafalanController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+    function data (Request $request) {
+        $data = Hafalan::where('teacher_id',Auth::user()->id)->with(['student','teacher'])->get();
+        $dt = DataTables::of($data)
+        ->addIndexColumn()
+        ->addColumn('nama_siswa',function($row) {
+            return $row->student->name;
+        })
+        // ->addColumn('aksi',function($row) {
+
+        //     $button = "<a href='".route('user-edit',['id' => $row->id])."'  class='btn btn-primary btn-sm'>Edit</a>";
+        //     $button .= '&nbsp;';
+        //     $button .= "<a href='".route('user-edit',['id' => $row->id])."'  class='btn btn-danger btn-sm'>Hapus</a>";
+        //     return $button;
+        // })
+        ->rawColumns(['nama_siswa'])
+        ->make(true);
+
+        return $dt;
+
     }
 }
