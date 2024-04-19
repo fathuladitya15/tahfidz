@@ -5,7 +5,12 @@ namespace App\Http\Controllers;
 use Auth;
 use DataTables;
 use Illuminate\Http\Request;
+use App\Models\User;
 use App\Models\Hafalan;
+use Spatie\Permission\Models\Role;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Storage;
+
 
 class HafalanController extends Controller
 {
@@ -18,7 +23,8 @@ class HafalanController extends Controller
      */
     public function index()
     {
-        return view('layouts.hafalan.index');
+        $students = User::role('student')->get();
+        return view('layouts.hafalan.index',compact('students'));
     }
 
     /**
@@ -34,7 +40,9 @@ class HafalanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'audioFile' => 'file|mimes:audio/mpeg,mpga,mp3,wav|max:10000',
+        ]);
     }
 
     /**

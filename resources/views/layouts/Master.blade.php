@@ -45,7 +45,15 @@
     <script src="{{ asset('assets/js/config.js') }}"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.css" integrity="sha512-DIW4FkYTOxjCqRt7oS9BFO+nVOwDL4bzukDyDtMO7crjUZhwpyrWBFroq+IqRe6VnJkTpRAS6nhDvf0w+wHmxg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
-
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+        <style>
+            .select2-close-mask{
+                z-index: 2099;
+            }
+            .select2-dropdown{
+                z-index: 3051;
+            }
+        </style>
     @stack('css')
   </head>
 
@@ -138,7 +146,18 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/js/iziToast.min.js" integrity="sha512-Zq9o+E00xhhR/7vJ49mxFNJ0KQw1E1TMWkPTxrWcnpfEFDEXgUiwJHIKit93EW/XxE31HSI5GEOW06G6BF1AtA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="http://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
-
+       <!-- JS Select2 -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // $("#select2").select2({
+            //     dropdownParent: $(".modal")
+            //   });
+            $('.modal').on('shown.bs.modal', function (e) {
+                $(this).find('#select2').select2();
+            });
+        });
+    </script>
     @stack('js')
   </body>
 </html>

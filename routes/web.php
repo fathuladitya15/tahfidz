@@ -24,10 +24,10 @@ Auth::routes();
 
 
 Route::middleware('auth')->group(function() {
-    Route::prefix('home')->group(function() {
-        Route::get('index',[HomeController::class,'index'])->name('home');
-        Route::get('profile',[ProfileController::class,'index'])->name('profile');
-    });
+    Route::get('home',[HomeController::class,'index'])->name('home');
+    Route::get('profile',[ProfileController::class,'index'])->name('profile');
+    // Route::prefix('home')->group(function() {
+    // });
     Route::prefix('user')->group(function() {
         Route::get('index',[UserController::class,'index'])->name('user-index');
         Route::get('create',[UserController::class,'create'])->name('user-create');
@@ -39,6 +39,7 @@ Route::middleware('auth')->group(function() {
     Route::prefix('hafalan')->group(function() {
         Route::get('index',[HafalanController::class,'index'])->name('hafalan-index');
         Route::get('data',[HafalanController::class,'data'])->name('hafalan-data');
+        Route::post('store',[HafalanController::class,'store'])->name('hafalan-simpan');
     });
 
 });
