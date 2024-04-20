@@ -1,133 +1,532 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<html data-bs-theme="light" lang="en-US" dir="ltr">
 
-        <title>Laravel</title>
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+<!-- Mirrored from themewagon.github.io/brainwave-io/v1.0.0/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 20 Apr 2024 17:54:55 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Styles -->
-        <style>
-            /* ! tailwindcss v3.2.4 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:Figtree, sans-serif;font-feature-settings:normal}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;font-weight:inherit;line-height:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]{display:none}*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }::-webkit-backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }.relative{position:relative}.mx-auto{margin-left:auto;margin-right:auto}.mx-6{margin-left:1.5rem;margin-right:1.5rem}.ml-4{margin-left:1rem}.mt-16{margin-top:4rem}.mt-6{margin-top:1.5rem}.mt-4{margin-top:1rem}.-mt-px{margin-top:-1px}.mr-1{margin-right:0.25rem}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.h-16{height:4rem}.h-7{height:1.75rem}.h-6{height:1.5rem}.h-5{height:1.25rem}.min-h-screen{min-height:100vh}.w-auto{width:auto}.w-16{width:4rem}.w-7{width:1.75rem}.w-6{width:1.5rem}.w-5{width:1.25rem}.max-w-7xl{max-width:80rem}.shrink-0{flex-shrink:0}.scale-100{--tw-scale-x:1;--tw-scale-y:1;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.items-center{align-items:center}.justify-center{justify-content:center}.gap-6{gap:1.5rem}.gap-4{gap:1rem}.self-center{align-self:center}.rounded-lg{border-radius:0.5rem}.rounded-full{border-radius:9999px}.bg-gray-100{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity))}.bg-red-50{--tw-bg-opacity:1;background-color:rgb(254 242 242 / var(--tw-bg-opacity))}.bg-dots-darker{background-image:url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.22676 0C1.91374 0 2.45351 0.539773 2.45351 1.22676C2.45351 1.91374 1.91374 2.45351 1.22676 2.45351C0.539773 2.45351 0 1.91374 0 1.22676C0 0.539773 0.539773 0 1.22676 0Z' fill='rgba(0,0,0,0.07)'/%3E%3C/svg%3E")}.from-gray-700\/50{--tw-gradient-from:rgb(55 65 81 / 0.5);--tw-gradient-to:rgb(55 65 81 / 0);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.via-transparent{--tw-gradient-to:rgb(0 0 0 / 0);--tw-gradient-stops:var(--tw-gradient-from), transparent, var(--tw-gradient-to)}.bg-center{background-position:center}.stroke-red-500{stroke:#ef4444}.stroke-gray-400{stroke:#9ca3af}.p-6{padding:1.5rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.text-center{text-align:center}.text-right{text-align:right}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.font-semibold{font-weight:600}.leading-relaxed{line-height:1.625}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity))}.text-gray-900{--tw-text-opacity:1;color:rgb(17 24 39 / var(--tw-text-opacity))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity))}.underline{-webkit-text-decoration-line:underline;text-decoration-line:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-gray-500\/20{--tw-shadow-color:rgb(107 114 128 / 0.2);--tw-shadow:var(--tw-shadow-colored)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.selection\:bg-red-500 *::selection{--tw-bg-opacity:1;background-color:rgb(239 68 68 / var(--tw-bg-opacity))}.selection\:text-white *::selection{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.selection\:bg-red-500::selection{--tw-bg-opacity:1;background-color:rgb(239 68 68 / var(--tw-bg-opacity))}.selection\:text-white::selection{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.hover\:text-gray-900:hover{--tw-text-opacity:1;color:rgb(17 24 39 / var(--tw-text-opacity))}.hover\:text-gray-700:hover{--tw-text-opacity:1;color:rgb(55 65 81 / var(--tw-text-opacity))}.focus\:rounded-sm:focus{border-radius:0.125rem}.focus\:outline:focus{outline-style:solid}.focus\:outline-2:focus{outline-width:2px}.focus\:outline-red-500:focus{outline-color:#ef4444}.group:hover .group-hover\:stroke-gray-600{stroke:#4b5563}.z-10{z-index: 10}@media (prefers-reduced-motion: no-preference){.motion-safe\:hover\:scale-\[1\.01\]:hover{--tw-scale-x:1.01;--tw-scale-y:1.01;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}}@media (prefers-color-scheme: dark){.dark\:bg-gray-900{--tw-bg-opacity:1;background-color:rgb(17 24 39 / var(--tw-bg-opacity))}.dark\:bg-gray-800\/50{background-color:rgb(31 41 55 / 0.5)}.dark\:bg-red-800\/20{background-color:rgb(153 27 27 / 0.2)}.dark\:bg-dots-lighter{background-image:url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.22676 0C1.91374 0 2.45351 0.539773 2.45351 1.22676C2.45351 1.91374 1.91374 2.45351 1.22676 2.45351C0.539773 2.45351 0 1.91374 0 1.22676C0 0.539773 0.539773 0 1.22676 0Z' fill='rgba(255,255,255,0.07)'/%3E%3C/svg%3E")}.dark\:bg-gradient-to-bl{background-image:linear-gradient(to bottom left, var(--tw-gradient-stops))}.dark\:stroke-gray-600{stroke:#4b5563}.dark\:text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity))}.dark\:text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.dark\:shadow-none{--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.dark\:ring-1{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.dark\:ring-inset{--tw-ring-inset:inset}.dark\:ring-white\/5{--tw-ring-color:rgb(255 255 255 / 0.05)}.dark\:hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.group:hover .dark\:group-hover\:stroke-gray-400{stroke:#9ca3af}}@media (min-width: 640px){.sm\:fixed{position:fixed}.sm\:top-0{top:0px}.sm\:right-0{right:0px}.sm\:ml-0{margin-left:0px}.sm\:flex{display:flex}.sm\:items-center{align-items:center}.sm\:justify-center{justify-content:center}.sm\:justify-between{justify-content:space-between}.sm\:text-left{text-align:left}.sm\:text-right{text-align:right}}@media (min-width: 768px){.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}}@media (min-width: 1024px){.lg\:gap-8{gap:2rem}.lg\:p-8{padding:2rem}}
-        </style>
-    </head>
-    <body class="antialiased">
-        <div class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
+    <!-- ===============================================--><!--    Document Title--><!-- ===============================================-->
+    <title>Landing Page Template</title>
+
+    <!-- ===============================================--><!--    Favicons--><!-- ===============================================-->
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('landing/assets/img/favicons/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('landing/assets/img/favicons/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('landing/assets/img/favicons/favicon-16x16.png') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('landing/assets/img/favicons/favicon.ico') }}">
+    <meta name="msapplication-TileImage" content="{{ asset('landing/assets/img/favicons/mstile-150x150.html') }}">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- ===============================================--><!--    Stylesheets--><!-- ===============================================-->
+    <link rel="stylesheet" href="{{ asset('landing/vendors/swiper/swiper-bundle.min.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&amp;family=Rubik:ital,wght@0,300..900;1,300..900family=Rubik:ital,wght@0,300..900;1,300..900&amp;display=swap" rel="stylesheet">
+    <link href="{{ asset('landing/assets/css/theme.min.css') }}" rel="stylesheet" id="style-default">
+    <link href="{{ asset('landing/assets/css/user-rtl.min.css') }}" rel="stylesheet" id="user-style-rtl">
+    <link href="{{ asset('landing/assets/css/user.min.css') }}" rel="stylesheet" id="user-style-default">
+    {{-- <link rel="stylesheet" href="../../../unicons.iconscout.com/release/v4.0.8/css/line.css"> --}}
+    <style>
+        .nav-item .nav-link .lh-xl {
+            color: #6d666;
+        }
+    </style>
+  </head>
+
+  <body>
+    <!-- ===============================================--><!--    Main Content--><!-- ===============================================-->
+    <main class="main" id="top">
+      <div class="content">
+        <nav class="navbar navbar-expand-md fixed-top" id="navbar" data-navbar-soft-on-scroll="data-navbar-soft-on-scroll">
+          <div class="container-fluid px-0">
+            <a href="#">
+                <img class="navbar-brand w-75 d-md-none" src="{{ asset('landing/assets/img/logos/logo.svg') }}" alt="logo" />
+            </a>
+            <a class="navbar-brand fw-bold d-none d-md-block" href="#">Your Name Company</a>
             @if (Route::has('login'))
-                <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
-                    @auth
-                        <a href="{{ url('/home') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Home</a>
-                    @else
-                        <a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
+                @auth
+                    <a class="btn btn-success btn-sm ms-md-x1 mt-lg-0 order-md-1 ms-auto" href="{{ route('home') }}"> Dashboard</a>
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
-                        @endif
-                    @endauth
-                </div>
+                @else
+                    <a class="btn btn-success btn-sm ms-md-x1 mt-lg-0 order-md-1 ms-auto" href="{{ route('login') }}"> Login </a>
+
+                @endauth
             @endif
-
-            <div class="max-w-7xl mx-auto p-6 lg:p-8">
-                <div class="flex justify-center">
-                    <svg viewBox="0 0 62 65" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-16 w-auto bg-gray-100 dark:bg-gray-900">
-                        <path d="M61.8548 14.6253C61.8778 14.7102 61.8895 14.7978 61.8897 14.8858V28.5615C61.8898 28.737 61.8434 28.9095 61.7554 29.0614C61.6675 29.2132 61.5409 29.3392 61.3887 29.4265L49.9104 36.0351V49.1337C49.9104 49.4902 49.7209 49.8192 49.4118 49.9987L25.4519 63.7916C25.3971 63.8227 25.3372 63.8427 25.2774 63.8639C25.255 63.8714 25.2338 63.8851 25.2101 63.8913C25.0426 63.9354 24.8666 63.9354 24.6991 63.8913C24.6716 63.8838 24.6467 63.8689 24.6205 63.8589C24.5657 63.8389 24.5084 63.8215 24.456 63.7916L0.501061 49.9987C0.348882 49.9113 0.222437 49.7853 0.134469 49.6334C0.0465019 49.4816 0.000120578 49.3092 0 49.1337L0 8.10652C0 8.01678 0.0124642 7.92953 0.0348998 7.84477C0.0423783 7.8161 0.0598282 7.78993 0.0697995 7.76126C0.0884958 7.70891 0.105946 7.65531 0.133367 7.6067C0.152063 7.5743 0.179485 7.54812 0.20192 7.51821C0.230588 7.47832 0.256763 7.43719 0.290416 7.40229C0.319084 7.37362 0.356476 7.35243 0.388883 7.32751C0.425029 7.29759 0.457436 7.26518 0.498568 7.2415L12.4779 0.345059C12.6296 0.257786 12.8015 0.211853 12.9765 0.211853C13.1515 0.211853 13.3234 0.257786 13.475 0.345059L25.4531 7.2415H25.4556C25.4955 7.26643 25.5292 7.29759 25.5653 7.32626C25.5977 7.35119 25.6339 7.37362 25.6625 7.40104C25.6974 7.43719 25.7224 7.47832 25.7523 7.51821C25.7735 7.54812 25.8021 7.5743 25.8196 7.6067C25.8483 7.65656 25.8645 7.70891 25.8844 7.76126C25.8944 7.78993 25.9118 7.8161 25.9193 7.84602C25.9423 7.93096 25.954 8.01853 25.9542 8.10652V33.7317L35.9355 27.9844V14.8846C35.9355 14.7973 35.948 14.7088 35.9704 14.6253C35.9792 14.5954 35.9954 14.5692 36.0053 14.5405C36.0253 14.4882 36.0427 14.4346 36.0702 14.386C36.0888 14.3536 36.1163 14.3274 36.1375 14.2975C36.1674 14.2576 36.1923 14.2165 36.2272 14.1816C36.2559 14.1529 36.292 14.1317 36.3244 14.1068C36.3618 14.0769 36.3942 14.0445 36.4341 14.0208L48.4147 7.12434C48.5663 7.03694 48.7383 6.99094 48.9133 6.99094C49.0883 6.99094 49.2602 7.03694 49.4118 7.12434L61.3899 14.0208C61.4323 14.0457 61.4647 14.0769 61.5021 14.1055C61.5333 14.1305 61.5694 14.1529 61.5981 14.1803C61.633 14.2165 61.6579 14.2576 61.6878 14.2975C61.7103 14.3274 61.7377 14.3536 61.7551 14.386C61.7838 14.4346 61.8 14.4882 61.8199 14.5405C61.8312 14.5692 61.8474 14.5954 61.8548 14.6253ZM59.893 27.9844V16.6121L55.7013 19.0252L49.9104 22.3593V33.7317L59.8942 27.9844H59.893ZM47.9149 48.5566V37.1768L42.2187 40.4299L25.953 49.7133V61.2003L47.9149 48.5566ZM1.99677 9.83281V48.5566L23.9562 61.199V49.7145L12.4841 43.2219L12.4804 43.2194L12.4754 43.2169C12.4368 43.1945 12.4044 43.1621 12.3682 43.1347C12.3371 43.1097 12.3009 43.0898 12.2735 43.0624L12.271 43.0586C12.2386 43.0275 12.2162 42.9888 12.1887 42.9539C12.1638 42.9203 12.1339 42.8916 12.114 42.8567L12.1127 42.853C12.0903 42.8156 12.0766 42.7707 12.0604 42.7283C12.0442 42.6909 12.023 42.656 12.013 42.6161C12.0005 42.5688 11.998 42.5177 11.9931 42.4691C11.9881 42.4317 11.9781 42.3943 11.9781 42.3569V15.5801L6.18848 12.2446L1.99677 9.83281ZM12.9777 2.36177L2.99764 8.10652L12.9752 13.8513L22.9541 8.10527L12.9752 2.36177H12.9777ZM18.1678 38.2138L23.9574 34.8809V9.83281L19.7657 12.2459L13.9749 15.5801V40.6281L18.1678 38.2138ZM48.9133 9.14105L38.9344 14.8858L48.9133 20.6305L58.8909 14.8846L48.9133 9.14105ZM47.9149 22.3593L42.124 19.0252L37.9323 16.6121V27.9844L43.7219 31.3174L47.9149 33.7317V22.3593ZM24.9533 47.987L39.59 39.631L46.9065 35.4555L36.9352 29.7145L25.4544 36.3242L14.9907 42.3482L24.9533 47.987Z" fill="#FF2D20"/>
-                    </svg>
-                </div>
-
-                <div class="mt-16">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-                        <a href="https://laravel.com/docs" class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
-                            <div>
-                                <div class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-7 h-7 stroke-red-500">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
-                                    </svg>
-                                </div>
-
-                                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Documentation</h2>
-
-                                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                    Laravel has wonderful documentation covering every aspect of the framework. Whether you are a newcomer or have prior experience with Laravel, we recommend reading our documentation from beginning to end.
-                                </p>
-                            </div>
-
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="self-center shrink-0 stroke-red-500 w-6 h-6 mx-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-                            </svg>
-                        </a>
-
-                        <a href="https://laracasts.com" class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
-                            <div>
-                                <div class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-7 h-7 stroke-red-500">
-                                        <path stroke-linecap="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" />
-                                    </svg>
-                                </div>
-
-                                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Laracasts</h2>
-
-                                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                    Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.
-                                </p>
-                            </div>
-
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="self-center shrink-0 stroke-red-500 w-6 h-6 mx-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-                            </svg>
-                        </a>
-
-                        <a href="https://laravel-news.com" class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
-                            <div>
-                                <div class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-7 h-7 stroke-red-500">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z" />
-                                    </svg>
-                                </div>
-
-                                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Laravel News</h2>
-
-                                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                    Laravel News is a community driven portal and newsletter aggregating all of the latest and most important news in the Laravel ecosystem, including new package releases and tutorials.
-                                </p>
-                            </div>
-
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="self-center shrink-0 stroke-red-500 w-6 h-6 mx-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-                            </svg>
-                        </a>
-
-                        <div class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
-                            <div>
-                                <div class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-7 h-7 stroke-red-500">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.115 5.19l.319 1.913A6 6 0 008.11 10.36L9.75 12l-.387.775c-.217.433-.132.956.21 1.298l1.348 1.348c.21.21.329.497.329.795v1.089c0 .426.24.815.622 1.006l.153.076c.433.217.956.132 1.298-.21l.723-.723a8.7 8.7 0 002.288-4.042 1.087 1.087 0 00-.358-1.099l-1.33-1.108c-.251-.21-.582-.299-.905-.245l-1.17.195a1.125 1.125 0 01-.98-.314l-.295-.295a1.125 1.125 0 010-1.591l.13-.132a1.125 1.125 0 011.3-.21l.603.302a.809.809 0 001.086-1.086L14.25 7.5l1.256-.837a4.5 4.5 0 001.528-1.732l.146-.292M6.115 5.19A9 9 0 1017.18 4.64M6.115 5.19A8.965 8.965 0 0112 3c1.929 0 3.716.607 5.18 1.64" />
-                                    </svg>
-                                </div>
-
-                                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Vibrant Ecosystem</h2>
-
-                                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                    Laravel's robust library of first-party tools and libraries, such as <a href="https://forge.laravel.com" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Forge</a>, <a href="https://vapor.laravel.com" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Vapor</a>, <a href="https://nova.laravel.com" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Nova</a>, and <a href="https://envoyer.io" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Envoyer</a> help you take your projects to the next level. Pair them with powerful open source libraries like <a href="https://laravel.com/docs/billing" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Cashier</a>, <a href="https://laravel.com/docs/dusk" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dusk</a>, <a href="https://laravel.com/docs/broadcasting" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Echo</a>, <a href="https://laravel.com/docs/horizon" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Horizon</a>, <a href="https://laravel.com/docs/sanctum" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Sanctum</a>, <a href="https://laravel.com/docs/telescope" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Telescope</a>, and more.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="flex justify-center mt-16 px-0 sm:items-center sm:justify-between">
-                    <div class="text-center text-sm sm:text-left">
-                        &nbsp;
-                    </div>
-
-                    <div class="text-center text-sm text-gray-500 dark:text-gray-400 sm:text-right sm:ml-0">
-                        Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
-                    </div>
-                </div>
+            <button class="navbar-toggler border-0 pe-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-md-end" id="navbar-content" data-navbar-collapse="data-navbar-collapse">
+              <ul class="navbar-nav gap-md-2 gap-lg-3 pt-x1 pb-1 pt-md-0 pb-md-0" data-navbar-nav="data-navbar-nav">
+                <li class="nav-item"> <a class="nav-link lh-xl" href="#home">Home</a></li>
+                <li class="nav-item"> <a class="nav-link lh-xl" href="#about">About us</a></li>
+                <li class="nav-item"> <a class="nav-link lh-xl" href="#service">Support</a></li>
+                <li class="nav-item"> <a class="nav-link lh-xl" href="#pricing">Pricing</a></li>
+                <li class="nav-item"> <a class="nav-link lh-xl" href="#contact">Contact</a></li>
+              </ul>
             </div>
-        </div>
-    </body>
+          </div>
+        </nav>
+        <div data-bs-target="#navbar" data-bs-spy="scroll" tabindex="0">
+          <section class="hero-section overflow-hidden position-relative z-0 mb-4 mb-lg-0" id="home">
+            <div class="hero-background">
+              <div class="container">
+                <div class="row gy-4 gy-md-8 pt-9 pt-lg-0">
+                  <div class="col-lg-6 text-center text-lg-start">
+                    <h1 class="fs-2 fs-lg-1 text-white fw-bold mb-2 mb-lg-x1 lh-base mt-3 mt-lg-0"> Manage your remote <span class="text-nowrap">team work</span></h1>
+                    <p class="fs-8 text-white mb-3 mb-lg-4 lh-lg">With lots of unique blocks, you can easily build a page without coding. Build your next consultancy website within few minutes</p>
+                    <div class="d-flex justify-content-center justify-content-lg-start"><a class="btn btn-primary btn-lg lh-xl mb-4 mb-md-5 mb-lg-7" href="#!">Explore more</a></div>
+                    <p class="mb-x1 fs-10 button-text text-uppercase fw-bold lh-base text-300">Download our app</p>
+                    <div class="d-flex flex-wrap justify-content-center justify-content-lg-start gap-2 position-relative z-2"><a class="border-0 p-0 bg-transparent cursor-pointer rounded-1" href="#!"> <img class="img-fluid" src="{{ asset('landing/assets/img/logos/App_Store.webp') }}" alt="{{ asset('landing/assets/img/logos/App_Store.webp') }}" /></a><a class="border-0 p-0 bg-transparent cursor-pointer rounded-1" href="#!"> <img class="img-fluid" src="{{ asset('landing/assets/img/logos/Play_Store.webp') }}" alt="{{ asset('landing/assets/img/logos/Play_Store.webp') }}" /></a></div>
+                  </div>
+                  <div class="col-lg-6 position-lg-relative">
+                    <div class="position-lg-absolute z-1 text-center"><img class="img-fluid chat-image" src="{{ asset('landing/assets/img/Hero/Frame.webp') }}" alt="" />
+                      <div class="position-absolute dots d-none d-md-block"> <img class="img-fluid w-50 w-lg-75" src="{{ asset('landing/assets/img/illustrations/Dots.webp') }}" alt="" /></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="position-absolute bottom-0 start-0 end-0 z-1"><img class="wave mb-md-n2" src="{{ asset('landing/assets/img/illustrations/Wave.svg') }}" alt="" />
+              <div class="bg-white py-2 py-md-5"></div>
+            </div>
+          </section>
+          <section class="container border-bottom mb-8 mb-lg-10">
+            <div class="row pb-6 pb-lg-8 g-3 g-lg-8 px-3">
+              <div class="col-12 col-md-4">
+                <h2 class="fs-3 fw-bold lh-sm mb-2 text-center" data-countup='{"endValue":6,"prefix":"0"}'>0</h2>
+                <h6 class="fs-8 fw-normal lh-lg mb-0 opacity-70 text-center">Offices are available on different countries</h6>
+              </div>
+              <div class="col-12 col-md-4">
+                <h2 class="fs-3 fw-bold lh-sm mb-2 text-center" data-countup='{"endValue":238}'>0</h2>
+                <h6 class="opacity-70 fs-8 fw-normal lh-lg mb-0 text-center">Seats are available right now with support</h6>
+              </div>
+              <div class="col-12 col-md-4">
+                <h2 class="fs-3 fw-bold lh-sm mb-2 text-center" data-countup='{"endValue":1395,"autoIncreasing":true}'>0</h2>
+                <h5 class="opacity-70 fs-8 fw-normal lh-lg mb-0 text-center">People are using our co-work spaces right now</h5>
+              </div>
+            </div>
+          </section>
+          <section class="container mb-8 mb-lg-13" id="about">
+            <div class="row align-items-center">
+              <div class="col-12 col-lg-6 col-xl-7"><img class="img-fluid" src="{{ asset('landing/assets/img/Hero/Team.webp') }}" alt="" /></div>
+              <div class="col-12 col-lg-6 col-xl-5">
+                <div class="row justify-content-center justify-content-lg-start">
+                  <div class="col-sm-10 col-md-8 col-lg-12">
+                    <h2 class="fs-4 fs-lg-3 fw-bold mb-2 text-center text-lg-start">Collaborate with team members.</h2>
+                    <p class="fs-8 mb-4 mb-lg-5 lh-lg text-center text-lg-start fw-normal">We share common trends and strategies for improving your rental income</p>
+                  </div>
+                  <div class="col-12">
+                    <div class="mb-x1 mb-lg-3">
+                      <h5 class="fs-8 fw-bold lh-lg mb-1">Project Based Groups </h5>
+                      <p class="mb-0 lh-xl">You can use this module to monitor ongoing projects seamlessly.</p>
+                    </div>
+                    <div>
+                      <h5 class="fs-8 fw-bold lh-lg mb-1"> Unlimited Video Meetings</h5>
+                      <p class="lh-xl mb-0">Conduct unlimited video meetings with us for better business operations.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="container mb-8 mb-lg-13">
+            <div class="row align-items-center">
+              <div class="col-12 col-lg-6 col-xl-5 order-lg-1"><img class="img-fluid" src="{{ asset('landing/assets/img/Hero/Collaborator.webp') }}" alt="" /></div>
+              <div class="col-12 col-lg-6 col-xl-7">
+                <div class="row justify-content-center justify-content-lg-start">
+                  <div class="col-sm-10 col-md-8 col-lg-11">
+                    <h2 class="fs-4 fs-lg-3 fw-bold mb-2 text-center text-lg-start"> Organize remote team fast & easily.</h2>
+                    <p class="fs-8 mb-4 mb-lg-5 lh-lg text-center text-lg-start fw-normal">Organizing and managing your remote teams has never been this easy!</p>
+                  </div>
+                  <div class="col-12">
+                    <div class="mb-x1 mb-lg-3">
+                      <h5 class="fs-8 fw-bold lh-lg mb-1">Create Unlimited Teams </h5>
+                      <p class="b-0 lh-xl">Create unlimited teams and boost productivity with efficient collaboration.</p>
+                    </div>
+                    <div>
+                      <h5 class="fs-8 fw-bold lh-lg mb-1"> Hasslefree Chat with Everyone</h5>
+                      <p class="lh-xl mb-0">With unique and simple UIs, keep yourself connected across all the teams.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="container mb-8 mb-lg-11">
+            <div class="row justify-content-center">
+              <div class="col-md-8 col-lg-7">
+                <h3 class="fs-4 fs-lg-3 fw-bold text-center mb-2 mb-lg-x1"> How does <span class="text-nowrap">it work?</span></h3>
+                <p class="fs-8 mb-7 mb-lg-8 text-center lh-lg">You can use this as it is or tweak it as you seem necessary. you seem necessary.</p>
+              </div>
+              <div class="col-12">
+                <div class="row g-sm-2 g-lg-3 align-items-center timeline">
+                  <div class="col-12 col-lg-4 d-flex flex-row flex-lg-column justify-content-center gap-2 gap-sm-x1 gap-md-4 gap-lg-0">
+                    <div class="timeline-step-1 w-25 w-lg-100 mb-4 mb-lg-5 mb-xl-6">
+                      <div class="timeline-item d-flex justify-content-center">
+                        <div class="timeline-icon bg-primary rounded-circle d-flex justify-content-center align-items-center"><span class="fs-6 fs-lg-5 fs-xl-4 text-white"> 1</span></div>
+                      </div>
+                    </div>
+                    <div class="py-1 py-lg-0 px-lg-5 w-75 w-sm-50 w-lg-100 timeline-content">
+                      <h6 class="fs-8 fw-bold text-lg-center lh-lg mb-2">Install App</h6>
+                      <p class="text-lg-center lh-xl mb-0">Install the app with a single click.</p>
+                    </div>
+                  </div>
+                  <div class="col-12 col-lg-4 d-flex flex-row flex-lg-column justify-content-center gap-2 gap-sm-x1 gap-md-4 gap-lg-0">
+                    <div class="timeline-step-2 w-25 w-lg-100 mb-4 mb-lg-5 mb-xl-6">
+                      <div class="timeline-item d-flex justify-content-center">
+                        <div class="timeline-icon bg-success rounded-circle d-flex justify-content-center align-items-center"><span class="fs-6 fs-lg-5 fs-xl-4 text-white"> 2</span></div>
+                      </div>
+                    </div>
+                    <div class="py-1 py-lg-0 px-lg-5 w-75 w-sm-50 w-lg-100 timeline-content">
+                      <h6 class="fs-8 fw-bold text-lg-center lh-lg mb-2">Add Team Members</h6>
+                      <p class="text-lg-center lh-xl mb-0">Start with adding team members to <span class="text-nowrap">your channels. </span></p>
+                    </div>
+                  </div>
+                  <div class="col-12 col-lg-4 d-flex flex-row flex-lg-column justify-content-center gap-2 gap-sm-x1 gap-md-4 gap-lg-0">
+                    <div class="timeline-step-3 position-relative z-1 overflow-hidden w-25 w-lg-100 mb-4 mb-lg-5 mb-xl-6">
+                      <div class="timeline-item d-flex justify-content-center">
+                        <div class="timeline-icon bg-info rounded-circle d-flex justify-content-center align-items-center"><span class="fs-6 fs-lg-5 fs-xl-4 text-white"> 3</span></div>
+                      </div>
+                    </div>
+                    <div class="py-1 py-lg-0 px-lg-5 w-75 w-sm-50 w-lg-100 timeline-content">
+                      <h6 class="fs-8 fw-bold text-lg-center lh-lg mb-2">Start Rolling</h6>
+                      <p class="text-lg-center lh-xl mb-0">Start operating your business in a simpler way <span class="text-nowrap">and grow!</span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="experience position-relative overflow-hidden" id="service">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-12">
+                  <div class="position-relative z-1 text-center mb-8 mb-lg-9 video-player-paused" data-video-player-container="data-video-player-container"><video class="w-100 h-100 rounded-4" src="{{ asset('landing/assets/video/Tech_video.mp4') }}" poster="{{ asset('landing/assets/img/Hero/experiences.webp') }}" type="video/mp4" data-video-player="data-video-player"></video>
+                    <div class="overlay position-absolute top-0 bottom-0 start-0 end-0 rounded-4 bg-1100 object-cover" data-overlay="data-overlay"> </div><button class="btn play-button position-absolute justify-content-center align-items-center bg-white rounded-circle cursor-pointer" data-play-button="data-play-button"> <img class="play-icon w-25" src="{{ asset('landing/assets/img/illustrations/play-solid.svg') }}" alt="" data-play-icon="data-play-icon" /><img class="pause-icon w-25" src="{{ asset('landing/assets/img/illustrations/pause-solid.svg') }}" alt="" data-pause-icon="data-pause-icon" /></button>
+                    <div class="position-absolute dots d-none d-sm-block"><img class="img-fluid w-100" src="{{ asset('landing/assets/img/illustrations/Dots.webp') }}" alt="" /></div>
+                  </div>
+                </div>
+                <div class="col-md-8 col-lg-7">
+                  <h2 class="fs-4 fs-lg-3 fw-bold text-center text-white mb-5 mb-lg-9 lh-sm">We made this app to solve your problems.</h2>
+                </div>
+                <div class="col-12">
+                  <div class="row gy-4 g-md-3 pb-8 pb-lg-11 px-1">
+                    <div class="col-12 col-md-6 col-lg-4 d-flex align-items-start gap-2"><img src="{{ asset('landing/assets/img/icons/roadmap.svg') }}" alt="" />
+                      <div>
+                        <h5 class="fs-8 text-white lh-lg fw-bold">Unlimited Projects</h5>
+                        <p class="text-white text-opacity-50 lh-xl mb-0">Manage multiple projects at once and for seamless business operation.</p>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 d-flex align-items-start gap-2"><img src="{{ asset('landing/assets/img/icons/users-wm.svg') }}" alt="" />
+                      <div>
+                        <h5 class="fs-8 text-white lh-lg fw-bold">Team Management</h5>
+                        <p class="text-white text-opacity-50 lh-xl mb-0">Manage your cross-functional teams better than ever with our easily manageable app.</p>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 d-flex align-items-start gap-2"><img src="{{ asset('landing/assets/img/icons/share-91.svg') }}" alt="" />
+                      <div>
+                        <h5 class="fs-8 text-white lh-lg fw-bold">File Sharing</h5>
+                        <p class="text-white text-opacity-50 lh-xl mb-0">Easily share files where necessary and keep them safe with enhanced security and protection.</p>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 d-flex align-items-start gap-2"><img src="{{ asset('landing/assets/img/icons/video_meeting.svg') }}" alt="" />
+                      <div>
+                        <h5 class="fs-8 text-white lh-lg fw-bold">Video Meeting</h5>
+                        <p class="text-white text-opacity-50 lh-xl mb-0">Conduct video meetings and keep records for further use with its cloud storage.</p>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 d-flex align-items-start gap-2"><img src="{{ asset('landing/assets/img/icons/opening-times.svg') }}" alt="" />
+                      <div>
+                        <h5 class="fs-8 text-white lh-lg fw-bold">Time Tracking</h5>
+                        <p class="text-white text-opacity-50 lh-xl mb-0">Track time to ensure meeting all the deadlines and never lag behind managing multiple projects.</p>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 d-flex align-items-start gap-2"><img src="{{ asset('landing/assets/img/icons/card-favorite.svg') }}" alt="" />
+                      <div>
+                        <h5 class="fs-8 text-white lh-lg fw-bold">Payment System</h5>
+                        <p class="text-white text-opacity-50 lh-xl mb-0">With its easy payment system create invoices and get paid all at the same place.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="position-absolute top-0 start-0 end-0">
+              <div class="bg-white py-3 py-md-9 py-xl-10"> </div><img class="wave" src="{{ asset('landing/assets/img/illustrations/Wave_2.svg') }}" alt="" />
+            </div>
+          </section>
+          <section class="bg-1100 mt-n1">
+            <div class="mx-auto text-center">
+              <hr class="horizontal-rule m-0 d-inline-block" />
+            </div>
+            <div class="container pb-8 pb-lg-10">
+              <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-7">
+                  <h2 class="fs-6 fs-lg-5 fw-bold text-white text-center pt-7 pb-4 pt-lg-9 pb-lg-6 lh-lg"> <span class="underline"> 1,749 remote teams </span>have shared their experience with our app!</h2>
+                </div>
+                <div class="col-12 mb-4 mb-lg-6">
+                  <div class="row g-2">
+                    <div class="swiper-theme-container">
+                      <div class="swiper position-relative" data-swiper='{"spaceBetween":20,"mousewheel":{"forceToAxis":true,"sensitiviye":20,"releaseOnEdges":true},"autoplay":{"delay":3000,"disableOnInteraction":false},"breakpoints":{"0":{"slidesPerView":1,"direction":"horizontal","centeredSlide":true,"loop":true},"768":{"direction":"horizontal","centeredSlide":true,"slidesPerView":2,"loop":true},"992":{"slidesPerView":3,"direction":"vertical","loop":false}}}'>
+                        <div class="swiper-wrapper">
+                          <div class="col-12 swiper-slide">
+                            <div class="d-flex justify-content-center gap-2">
+                              <div class="d-flex flex-column flex-lg-row gap-2 px-4 py-x1 review-card-1">
+                                <div class="text-center text-lg-start"><img class="card-image rounded-circle object-fit-cover" src="{{ asset('landing/assets/img/feedback/reviewer_1.webp') }}" alt="" /></div>
+                                <div class="text-center text-lg-start">
+                                  <p class="fs-8 mb-2 lh-lg line-clamp-3 text-1100">“OMG! I cannot believe that I have got a brand new landing page after getting Omega. It was super easy to edit and publish.”</p>
+                                  <p class="text-800 lh-xl mb-0">Isaac Olson</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-12 swiper-slide">
+                            <div class="d-flex justify-content-center gap-2">
+                              <div class="d-flex flex-column flex-lg-row gap-2 px-4 py-x1 review-card-2">
+                                <div class="text-center text-lg-start"><img class="card-image rounded-circle object-fit-cover" src="{{ asset('landing/assets/img/feedback/reviewer_2.webp') }}" alt="" /></div>
+                                <div class="text-center text-lg-start">
+                                  <p class="fs-8 mb-2 lh-lg line-clamp-3 text-1100">“Simply the best. Better than all the rest. I’d recommend this product to beginners and advanced users who want success.”</p>
+                                  <p class="text-800 lh-xl mb-0">Barry Young</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-12 swiper-slide">
+                            <div class="d-flex justify-content-center gap-2">
+                              <div class="d-flex flex-column flex-lg-row gap-2 px-4 py-x1 review-card-3">
+                                <div class="text-center text-lg-start"><img class="card-image rounded-circle object-fit-cover" src="{{ asset('landing/assets/img/feedback/reviewer_3.webp') }}" alt="" /></div>
+                                <div class="text-center text-lg-start">
+                                  <p class="fs-8 mb-2 lh-lg line-clamp-3 text-1100">“Must have book for all, who want to be Product Designer or Interaction Designer.”</p>
+                                  <p class="text-800 lh-xl mb-0">Esther Allison</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-12 swiper-slide">
+                            <div class="d-flex justify-content-center gap-2">
+                              <div class="d-flex flex-column flex-lg-row gap-2 px-4 py-x1 review-card-4">
+                                <div class="text-center text-lg-start"><img class="card-image rounded-circle object-fit-cover" src="{{ asset('landing/assets/img/feedback/kakashi.webp') }}" alt="" /></div>
+                                <div class="text-center text-lg-start">
+                                  <p class="fs-8 mb-2 lh-lg line-clamp-3 text-1100">“Every day, I eat, sleep, and worry about stupid things. My job is to ensure that these kids have as many days as possible where they can be idiots like this.”</p>
+                                  <p class="text-800 lh-xl mb-0">Kakashi Hatake</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-12 swiper-slide">
+                            <div class="d-flex justify-content-center gap-2">
+                              <div class="d-flex flex-column flex-lg-row gap-2 px-4 py-x1 review-card-5">
+                                <div class="text-center text-lg-start"><img class="card-image rounded-circle object-fit-cover" src="{{ asset('landing/assets/img/feedback/obito.webp') }}" alt="" /></div>
+                                <div class="text-center text-lg-start">
+                                  <p class="fs-8 mb-2 lh-lg line-clamp-3 text-1100">“Life isn’t permanent or predictable. You never know when you will run out of time. The best thing you can do is to be honest with those around you and let them know how you really feel. You never know if you have a tomorrow to come.”</p>
+                                  <p class="text-800 lh-xl mb-0">Obito Uchiha</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="text-center"><a class="py-1 link-success" href="#!"><span>Read more reviews </span><span class="uil uil-arrow-right icon"></span></a></div>
+              </div>
+            </div>
+          </section>
+          <section class="bg-300" id="pricing">
+            <div class="container py-8 py-lg-10">
+              <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-7">
+                  <h3 class="fs-4 fs-lg-3 fw-bold text-center mb-2 mb-lg-x1 lh-sm">Pricing made easy</h3>
+                  <p class="fs-8 mb-7 mb-lg-8 text-center lh-lg fw-normal">Show your pricing to your customers once they’re here with easily modifiable pricing cards. </p>
+                </div>
+                <div class="col-12">
+                  <div class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-3">
+                    <div class="p-x1 text-center price-card-1 bg-transparent border mb-3 mb-md-0 rounded-2 pricing-card">
+                      <p class="fs-10 text-uppercase mb-3 fw-bold text-primary ls-2"> Starter</p>
+                      <h2 class="mb-3"><span class="fs-6 fs-md-7 fw-bold">$</span><span class="fs-2 fs-md-1 fw-bold">19</span><span class="fs-9 lh-xl font-sans-serif">/ mo</span></h2>
+                      <ul class="list-unstyled fs-8 lh-xl fw-light text-1100 ls-1">
+                        <li class="py-x1 px-1 border-top"> Upto 100 Team Members </li>
+                        <li class="py-x1 px-1 border-top"> 100 GB Cloud Storage </li>
+                        <li class="py-x1 px-1 border-top"> Unlimited Meetings </li>
+                        <li class="py-x1 px-1 border-top"> Premium Support </li>
+                        <li class="mt-1 d-grid"> <button class="btn btn-secondary btn-lg lh-xl">Get Started Now</button></li>
+                      </ul>
+                    </div>
+                    <div class="p-x1 text-center bg-white border shadow-sm rounded-2 pricing-card">
+                      <p class="fs-10 text-uppercase mb-3 fw-bold text-primary ls-2"> Unlimited</p>
+                      <h2 class="mb-3"><span class="fs-6 fs-md-7 fw-bold">$</span><span class="fs-2 fs-md-1 fw-bold">99</span><span class="fs-9 lh-xl font-sans-serif">/ mo</span></h2>
+                      <ul class="list-unstyled fs-8 lh-xl fw-light text-1100 ls-1">
+                        <li class="py-x1 px-1 border-top"> Unlimited Team Members </li>
+                        <li class="py-x1 px-1 border-top"> Unlimited Cloud Storage </li>
+                        <li class="py-x1 px-1 border-top"> Unlimited Meetings </li>
+                        <li class="py-x1 px-1 border-top"> Premium Support </li>
+                        <li class="mt-1 d-grid"> <button class="btn btn-primary btn-lg lh-xl">Get Started Now</button></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="bg-1100">
+            <div class="container">
+              <div class="row py-8 py-md-10 py-lg-11">
+                <div class="col-lg-6">
+                  <div class="row justify-content-center justify-content-lg-start">
+                    <div class="col-md-8 col-lg-12 col-xl-11">
+                      <h2 class="text-white fs-4 fs-lg-3 lh-sm mb-2 text-center text-lg-start fw-bold">We are always here for your backup.</h2>
+                      <p class="fs-8 text-white text-opacity-65 mb-4 mb-md-6 mb-lg-7 lh-lg mb-6 mb-lg-7 text-center text-lg-start"> We share common trends and strategies for creating & improving your text-nowrap rental income.</p>
+                    </div>
+                    <div class="col-lg-10">
+                      <div class="d-flex gap-2 gap-lg-x1 mb-4 mb-lg-5">
+                        <div>
+                          <div class="check-icon bg-success mb-1 rounded-circle d-flex align-items-center justify-content-center"> <span class="uil uil-check text-white"></span></div>
+                        </div>
+                        <div>
+                          <h5 class="fs-8 fw-bold lh-lg mb-1 text-white">Noise Free Locations</h5>
+                          <p class="lh-xl text-white text-opacity-70 mb-0">We ensure noise-free locations for your peace of mind and sound sleep.</p>
+                        </div>
+                      </div>
+                      <div class="d-flex gap-2 gap-lg-x1 mb-4 mb-lg-5">
+                        <div>
+                          <div class="check-icon bg-success mb-1 rounded-circle d-flex align-items-center justify-content-center"> <span class="uil uil-check text-white"></span></div>
+                        </div>
+                        <div>
+                          <h5 class="fs-8 fw-bold lh-lg mb-1 text-white">24/7 Hour Support</h5>
+                          <p class="lh-xl text-white text-opacity-70 mb-0">Get support from our efficient customer support team, 24/7, all year round.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="accordion mt-lg-4 ps-3 pe-x1 bg-white" id="accordion">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="heading1"><button class="accordion-button fs-8 lh-lg fw-bold pt-x1 pb-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expand="true" aria-controls="collapse1" data-accordion-button="data-accordion-button">How to setup BrainwaveIO?</button></h2>
+                      <div class="accordion-collapse collapse show" id="collapse1" data-bs-parent="#accordion">
+                        <div class="accordion-body lh-xl pt-0 pb-x1">Enjoy the easy setup process with little to no coding knowledge with us!</div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="heading2"><button class="accordion-button fs-8 lh-lg fw-bold pt-x1 pb-2 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expand="false" aria-controls="collapse2" data-accordion-button="data-accordion-button">Can I use BrainwaveIO for my clients?</button></h2>
+                      <div class="accordion-collapse collapse" id="collapse2" data-bs-parent="#accordion">
+                        <div class="accordion-body lh-xl pt-0 pb-x1">Yes, you can. Enjoy special rates for your first client!</div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="heading3"><button class="accordion-button fs-8 lh-lg fw-bold pt-x1 pb-2 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expand="false" aria-controls="collapse3" data-accordion-button="data-accordion-button">How often do you release update?</button></h2>
+                      <div class="accordion-collapse collapse" id="collapse3" data-bs-parent="#accordion">
+                        <div class="accordion-body lh-xl pt-0 pb-x1">We will keep updating the theme; stay with us to get updated!</div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="heading4"><button class="accordion-button fs-8 lh-lg fw-bold pt-x1 pb-2 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expand="false" aria-controls="collapse4" data-accordion-button="data-accordion-button">How can I access to old version?</button></h2>
+                      <div class="accordion-collapse collapse" id="collapse4" data-bs-parent="#accordion">
+                        <div class="accordion-body lh-xl pt-0 pb-x1">Go to your cloud storage and provide the password. You’ll find it there..</div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="heading5"><button class="accordion-button fs-8 lh-lg fw-bold pt-x1 pb-2 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expand="false" aria-controls="collapse5" data-accordion-button="data-accordion-button">How can I get your support?</button></h2>
+                      <div class="accordion-collapse collapse" id="collapse5" data-bs-parent="#accordion">
+                        <div class="accordion-body lh-xl pt-0 pb-x1">To reach our support team, simply send an email to support@brainwaveio.com. Our team will promptly address your inquiry and provide assistance as needed.</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="bg-300 position-relative z-0" id="contact">
+            <div class="container py-8 py-lg-9">
+              <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-8">
+                  <div class="row justify-content-center">
+                    <div class="col-12 col-lg-10">
+                      <h2 class="fs-4 fs-lg-3 fw-bold text-center mb-2 lh-sm">Get latest updates</h2>
+                      <p class="fs-8 mb-5 mb-lg-6 text-center lh-lg fw-normal"> Subscribe to our monthly newsletter to stay connected with everything you need!</p>
+                    </div>
+                    <div class="col-10 col-lg-7">
+                      <form method="POST" onsubmit="return false;">
+                        <div class="mb-2 w-100"><input class="form-control email-input" id="email" type="email" placeholder="Enter your email" required="required" /></div>
+                        <div class="d-grid"><button class="btn btn-lg btn-primary lh-xl mb-x1" type="submit"> Subscribe </button></div>
+                      </form>
+                    </div>
+                    <div class="col-10 col-lg-7">
+                      <p class="text-center lh-lg mb-0">We’ll never share your details with third parties. View our Privacy Policy for more info.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="position-absolute bottom-0 end-0 z-n1 d-none d-lg-block"><img src="{{ asset('landing/assets/img/illustrations/Green_dots.svg') }}" alt="" /></div>
+            <div class="position-relative bottom-0 start-0 z-1"><img class="img-fluid w-100" src="{{ asset('landing/assets/img/illustrations/Wave_3.svg') }}" alt="" /></div>
+          </section>
+        </div><button class="btn scroll-to-top text-white rounded-circle d-flex justify-content-center align-items-center bg-primary" data-scroll-top="data-scroll-top"><span class="uil uil-angle-up"></span></button>
+        <footer class="pt-7 pt-lg-8">
+          <div class="container">
+            <div class="row gy-4 g-md-3 border-bottom pb-8 pb-lg-9 justify-content-center">
+              <div class="col-6 col-md-3">
+                <p class="mb-2 lh-lg ls-1">Company</p>
+                <ul class="list-unstyled text-1100">
+                  <li class="mb-1"> <a class="ls-1 lh-xl" href="#about">About us</a></li>
+                  <li class="mb-1"> <a class="ls-1 lh-xl" href="#contact"> Contact us</a></li>
+                  <li class="mb-1"> <a class="ls-1 lh-xl" href="#!">Careers</a></li>
+                  <li class="mb-1"> <a class="ls-1 lh-xl" href="#!">Press</a></li>
+                </ul>
+              </div>
+              <div class="col-6 col-md-3">
+                <p class="mb-2 lh-lg">Product</p>
+                <ul class="list-unstyled text-1100">
+                  <li class="mb-1"> <a class="ls-1 lh-xl" href="#!">Features</a></li>
+                  <li class="mb-1"> <a class="ls-1 lh-xl" href="#!"> Pricing</a></li>
+                  <li class="mb-1"> <a class="ls-1 lh-xl" href="#!"> News</a></li>
+                  <li class="mb-1"> <a class="ls-1 lh-xl" href="#!"> Help desk</a></li>
+                  <li class="mb-1"><a class="ls-1 lh-xl" href="#!"> Support</a></li>
+                </ul>
+              </div>
+              <div class="col-6 col-md-3">
+                <p class="mb-2 lh-lg"> Legal</p>
+                <ul class="list-unstyled text-1100">
+                  <li class="mb-1"> <a class="ls-1 lh-xl" href="#!">Privacy</a></li>
+                  <li class="mb-1"> <a class="ls-1 lh-xl" href="#!"> Terms & Conditions</a></li>
+                  <li class="mb-1"> <a class="ls-1 lh-xl" href="#!"> Return Policy</a></li>
+                </ul>
+              </div>
+              <div class="col-6 col-md-3 d-md-flex flex-column align-items-md-end pe-md-0">
+                <div>
+                  <p class="mb-2 lh-lg"> Download Our App</p>
+                  <div class="mb-1 mb-lg-2"> <a class="border-0 p-0 bg-transparent cursor-pointer rounded-1" href="#!"> <img class="img-fluid" src="{{ asset('landing/assets/img/logos/App_Store.webp') }}" alt="{{ asset('landing/assets/img/logos/App_Store.webp') }}" /></a></div><a class="border-0 p-0 bg-transparent cursor-pointer rounded-1" href="#!"> <img class="img-fluid" src="{{ asset('landing/assets/img/logos/Play_Store.webp') }}" alt="{{ asset('landing/assets/img/logos/Play_Store.webp') }}" /></a>
+                </div>
+              </div>
+            </div>
+            <div class="row gy-2 py-3 justify-content-center justify-content-md-between">
+              <div class="col-auto ps-0">
+                <p class="text-center text-md-start lh-xl text-1100"> © 2024 Copyright, All Right Reserved, Made by <a class="fw-semi-bold" href="https://themewagon.com/">ThemeWagon </a>❤️</p>
+              </div>
+              <div class="col-auto pe-0"><a class="icons fs-8 me-3 me-md-0 ms-md-3 cursor-pointer" href="#!"><span class="uil uil-twitter"> </span></a><a class="icons fs-8 me-3 me-md-0 ms-md-3 cursor-pointer" href="#!"><span class="uil uil-instagram"></span></a><a class="icons fs-8 me-3 me-md-0 ms-md-3 cursor-pointer" href="#!"><span class="uil uil-linkedin"> </span></a></div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </main><!-- ===============================================--><!--    End of Main Content--><!-- ===============================================-->
+
+
+
+    <!-- ===============================================--><!--    JavaScripts--><!-- ===============================================-->
+    <script src="{{ asset('landing/vendors/popper/popper.min.js') }}"></script>
+    <script src="{{ asset('landing/vendors/bootstrap/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('landing/vendors/is/is.min.js') }}"></script>
+    <script src="{{ asset('landing/vendors/countup/countUp.umd.js') }}"></script>
+    <script src="{{ asset('landing/vendors/swiper/swiper-bundle.min.js') }}"></script>
+    <script src="{{ asset('landing/vendors/lodash/lodash.min.js') }}"></script>
+    {{-- <script src="../../../polyfill.io/v3/polyfill.min58be.js?features=window.scroll"></script> --}}
+    <script src="{{ asset('landing/assets/js/theme.js') }}"></script>
+  </body>
+
+
+<!-- Mirrored from themewagon.github.io/brainwave-io/v1.0.0/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 20 Apr 2024 17:55:06 GMT -->
 </html>

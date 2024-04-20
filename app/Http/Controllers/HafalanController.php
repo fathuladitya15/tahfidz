@@ -12,6 +12,7 @@ use App\Models\Audio;
 use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Storage;
+use GuzzleHttp\Client;
 
 
 class HafalanController extends Controller
@@ -40,7 +41,9 @@ class HafalanController extends Controller
             return view('layouts.hafalan.indexStudent',compact('totalAyat','percentAyat','percentJuz','totalJuz'));
         }
         else if($roles == 'teacher') {
-            $students = User::role('student')->get();
+            $students   = User::role('student')->get();
+            $getSurat   = $this->fetchDataFromApi();
+            dd($getSurat);
             return view('layouts.hafalan.index',compact('students'));
         }
         else if($roles == 'admin') {
@@ -199,4 +202,26 @@ class HafalanController extends Controller
         $dataArray = json_decode($response, true);
         return $dataArray;
     }
+
+    public function fetchDataFromApi()
+{
+    $client = new Client();
+
+    try {
+        $response = $client->request('GET', 'http://api.alquran.cloud/v1/quran/quran-uthmani');
+
+        $statusCode = $response->getStatusCode();
+
+        if ($statusCode == 200) {
+            $data = json_decode($response->getBody(), true);
+
+            // Lakukan sesuatu dengan data yang diterima
+            return $data;
+        } else {
+            return "Gagal mengambil data. Status code: " . $statusCode;
+        }
+    } catch (\GuzzleHttp\Exception\ClientException $e) {
+        return "Error: " . $e->getMessage();
+    }
+}
 }
