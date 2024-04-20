@@ -204,24 +204,24 @@ class HafalanController extends Controller
     }
 
     public function fetchDataFromApi()
-{
-    $client = new Client();
+    {
+        $client = new Client();
 
-    try {
-        $response = $client->request('GET', 'http://api.alquran.cloud/v1/quran/quran-uthmani');
+        try {
+            $response = $client->request('GET', 'http://api.alquran.cloud/v1/quran/quran-uthmani');
 
-        $statusCode = $response->getStatusCode();
+            $statusCode = $response->getStatusCode();
 
-        if ($statusCode == 200) {
-            $data = json_decode($response->getBody(), true);
+            if ($statusCode == 200) {
+                $data = json_decode($response->getBody(), true);
 
-            // Lakukan sesuatu dengan data yang diterima
-            return $data;
-        } else {
-            return "Gagal mengambil data. Status code: " . $statusCode;
+                // Lakukan sesuatu dengan data yang diterima
+                return $data;
+            } else {
+                return "Gagal mengambil data. Status code: " . $statusCode;
+            }
+        } catch (\GuzzleHttp\Exception\ClientException $e) {
+            return "Error: " . $e->getMessage();
         }
-    } catch (\GuzzleHttp\Exception\ClientException $e) {
-        return "Error: " . $e->getMessage();
     }
-}
 }

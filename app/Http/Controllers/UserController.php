@@ -79,7 +79,7 @@ class UserController extends Controller
             'alamat' => $request->alamat,
             'password' => Hash::make($request->password),
         ]);
-        $siswa->assignRole('student');
+        $siswa->assignRole($request->sebagai);
         return response()->json(['status' => TRUE,'pesan' => 'Berhasil menambahkan data baru']);
     }
 
@@ -176,7 +176,7 @@ class UserController extends Controller
         if($roles == 'admin'){
             $data  = User::where('name','!=','Admin')->get();
         }else {
-            $data = User::all();
+            $data = User::role('student')->get();
         }
 
         $dt = DataTables::of($data)

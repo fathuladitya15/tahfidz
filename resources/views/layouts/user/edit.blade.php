@@ -47,6 +47,22 @@
                             <input type="text"  id="alamat" class="form-control" name="alamat" placeholder="Masukan alamat detail" required value="{{ $data->alamat }}">
                         </div>
                     </div>
+                    @php
+                        $roles = Auth::user()->getRoleNames()->join(', ');
+                    @endphp
+                    @if($roles == 'admin')
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="JenisAkun">Sebagai ? </label>
+                                <select name="sebagai" id="sebagai" class="form-control" required>
+                                    <option value="admin">Admin</option>
+                                    <option value="student">Murid</option>
+                                    <option value="teacher">Guru</option>
+                                </select>
+
+                            </div>
+                        </div>
+                    @endif
 
                     <hr>
                     Informasi Akun
