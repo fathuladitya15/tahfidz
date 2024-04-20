@@ -15,7 +15,8 @@ class Hafalan extends Model
             'student_id',
             'teacher_id',
             'lembar_hafalan',
-            'ayat',
+            'ayat_start',
+            'ayat_end',
             'juz',
     ];
 

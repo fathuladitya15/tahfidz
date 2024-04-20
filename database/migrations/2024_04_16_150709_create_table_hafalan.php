@@ -16,7 +16,8 @@ return new class extends Migration
             $table->unsignedBigInteger('student_id')->nullable();
             $table->unsignedBigInteger('teacher_id')->nullable();
             $table->integer('lembar_hafalan');
-            $table->integer('ayat');
+            $table->integer('ayat_start');
+            $table->integer('ayat_end');
             $table->integer('juz');
             $table->timestamps();
 

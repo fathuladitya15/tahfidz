@@ -27,6 +27,7 @@
                               <th>Ayat</th>
                               <th>Juz</th>
                               <th>Audio</th>
+                              <th>Aksi</th>
                             </tr>
                           </thead>
                           <tbody>
@@ -67,8 +68,12 @@
                             <input type="number" id="LembarHafalan" name="LembarHafalan" class="form-control" required />
                         </div>
                         <div class="col mb-0">
-                            <label for="Ayat" class="form-label">Ayat</label>
-                            <input type="number" id="Ayat" name="Ayat" class="form-control" required  />
+                            <label for="Ayat" class="form-label">Mulai dari Ayat</label>
+                            <input type="number" id="Ayat_Start" name="AyatStart" class="form-control" required  />
+                        </div>
+                        <div class="col mb-0">
+                            <label for="Ayat" class="form-label">sampai  ayat</label>
+                            <input type="number" id="Ayat_End" name="AyatEnd" class="form-control" required  />
                         </div>
                         <div class="col mb-0">
                             <label for="Juz" class="form-label">Juz</label>
@@ -128,6 +133,7 @@
                 { data: 'ayat', name: 'ayat' },
                 { data: 'juz', name: 'juz' },
                 { data: 'audio', name: 'audio' },
+                { data: 'aksi', name: 'aksi' },
             ]
         });
 
@@ -176,23 +182,13 @@
             })
         })
 
-
-
-
     });
-    // $(".played").click(function(e) {
-    //         console.log(e);
-    //         var buttonId    = $(this).data('id');
-    //         var buttonName  = $(this).data('src');
-    //         console.log('ID: ' + buttonId + ', Nama: ' + buttonName);
-    //     });
 
     $(document).on('click', '.played', function() {
         var id  = $(this).data('id');
         var src = $(this).data('src');
         $('#audioPlayer').attr('src', src);
         $('#audioModal').modal('show');
-        // Tambahkan logika atau permintaan AJAX Anda di sini
     })
 
 </script>
