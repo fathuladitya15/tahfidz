@@ -10,13 +10,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- ===============================================--><!--    Document Title--><!-- ===============================================-->
-    <title>Landing Page Template</title>
+    <title>Pesantren Nurul Iman Al Hasanah</title>
 
     <!-- ===============================================--><!--    Favicons--><!-- ===============================================-->
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('landing/assets/img/favicons/apple-touch-icon.png') }}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('landing/assets/img/favicons/favicon-32x32.png') }}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('landing/assets/img/favicons/favicon-16x16.png') }}">
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('landing/assets/img/favicons/favicon.ico') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/img/logo/logopesantren.jpg') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/img/logo/logopesantren.jpg') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/img/logo/logopesantren.jpg') }}">
     <meta name="msapplication-TileImage" content="{{ asset('landing/assets/img/favicons/mstile-150x150.html') }}">
     <meta name="theme-color" content="#ffffff">
 
@@ -45,7 +45,7 @@
             <a href="#">
                 <img class="navbar-brand w-75 d-md-none" src="{{ asset('landing/assets/img/logos/logo.svg') }}" alt="logo" />
             </a>
-            <a class="navbar-brand fw-bold d-none d-md-block" href="#">Your Name Company</a>
+            <a class="navbar-brand fw-bold d-none d-md-block" href="#">Pesantren Nurul Iman Al-Hasanah</a>
             @if (Route::has('login'))
                 @auth
                     <a class="btn btn-success btn-sm ms-md-x1 mt-lg-0 order-md-1 ms-auto" href="{{ route('home') }}"> Dashboard</a>
@@ -61,10 +61,10 @@
             <div class="collapse navbar-collapse justify-content-md-end" id="navbar-content" data-navbar-collapse="data-navbar-collapse">
               <ul class="navbar-nav gap-md-2 gap-lg-3 pt-x1 pb-1 pt-md-0 pb-md-0" data-navbar-nav="data-navbar-nav">
                 <li class="nav-item"> <a class="nav-link lh-xl" href="#home">Home</a></li>
-                <li class="nav-item"> <a class="nav-link lh-xl" href="#about">About us</a></li>
-                <li class="nav-item"> <a class="nav-link lh-xl" href="#service">Support</a></li>
-                <li class="nav-item"> <a class="nav-link lh-xl" href="#pricing">Pricing</a></li>
-                <li class="nav-item"> <a class="nav-link lh-xl" href="#contact">Contact</a></li>
+                {{-- <li class="nav-item"> <a class="nav-link lh-xl" href="#about">About us</a></li> --}}
+                {{-- <li class="nav-item"> <a class="nav-link lh-xl" href="#service">Profile</a></li> --}}
+                {{-- <li class="nav-item"> <a class="nav-link lh-xl" href="#pricing">Pricing</a></li> --}}
+                {{-- <li class="nav-item"> <a class="nav-link lh-xl" href="#contact">Contact</a></li> --}}
               </ul>
             </div>
           </div>
@@ -75,16 +75,8 @@
               <div class="container">
                 <div class="row gy-4 gy-md-8 pt-9 pt-lg-0">
                   <div class="col-lg-6 text-center text-lg-start">
-                    <h1 class="fs-2 fs-lg-1 text-white fw-bold mb-2 mb-lg-x1 lh-base mt-3 mt-lg-0"> Manage your remote <span class="text-nowrap">team work</span></h1>
-                    <p class="fs-8 text-white mb-3 mb-lg-4 lh-lg">With lots of unique blocks, you can easily build a page without coding. Build your next consultancy website within few minutes</p>
-                    <div class="d-flex justify-content-center justify-content-lg-start"><a class="btn btn-primary btn-lg lh-xl mb-4 mb-md-5 mb-lg-7" href="#!">Explore more</a></div>
-                    <p class="mb-x1 fs-10 button-text text-uppercase fw-bold lh-base text-300">Download our app</p>
-                    <div class="d-flex flex-wrap justify-content-center justify-content-lg-start gap-2 position-relative z-2"><a class="border-0 p-0 bg-transparent cursor-pointer rounded-1" href="#!"> <img class="img-fluid" src="{{ asset('landing/assets/img/logos/App_Store.webp') }}" alt="{{ asset('landing/assets/img/logos/App_Store.webp') }}" /></a><a class="border-0 p-0 bg-transparent cursor-pointer rounded-1" href="#!"> <img class="img-fluid" src="{{ asset('landing/assets/img/logos/Play_Store.webp') }}" alt="{{ asset('landing/assets/img/logos/Play_Store.webp') }}" /></a></div>
-                  </div>
-                  <div class="col-lg-6 position-lg-relative">
-                    <div class="position-lg-absolute z-1 text-center"><img class="img-fluid chat-image" src="{{ asset('landing/assets/img/Hero/Frame.webp') }}" alt="" />
-                      <div class="position-absolute dots d-none d-md-block"> <img class="img-fluid w-50 w-lg-75" src="{{ asset('landing/assets/img/illustrations/Dots.webp') }}" alt="" /></div>
-                    </div>
+                    <h1 class="fs-2 fs-lg-1 text-white fw-bold mb-2 mb-lg-x1 lh-base mt-3 mt-lg-0"> Pondok Pesantren <span class="text-nowrap">Nurul Al-Hasanah</span></h1>
+                    {{-- <div class="d-flex flex-wrap justify-content-center justify-content-lg-start gap-2 position-relative z-2"><a class="border-0 p-0 bg-transparent cursor-pointer rounded-1" href="#!"> <img class="img-fluid" src="{{ asset('landing/assets/img/logos/App_Store.webp') }}" alt="{{ asset('landing/assets/img/logos/App_Store.webp') }}" /></a><a class="border-0 p-0 bg-transparent cursor-pointer rounded-1" href="#!"> <img class="img-fluid" src="{{ asset('landing/assets/img/logos/Play_Store.webp') }}" alt="{{ asset('landing/assets/img/logos/Play_Store.webp') }}" /></a></div> --}}
                   </div>
                 </div>
               </div>
@@ -93,119 +85,19 @@
               <div class="bg-white py-2 py-md-5"></div>
             </div>
           </section>
-          <section class="container border-bottom mb-8 mb-lg-10">
-            <div class="row pb-6 pb-lg-8 g-3 g-lg-8 px-3">
-              <div class="col-12 col-md-4">
-                <h2 class="fs-3 fw-bold lh-sm mb-2 text-center" data-countup='{"endValue":6,"prefix":"0"}'>0</h2>
-                <h6 class="fs-8 fw-normal lh-lg mb-0 opacity-70 text-center">Offices are available on different countries</h6>
-              </div>
-              <div class="col-12 col-md-4">
-                <h2 class="fs-3 fw-bold lh-sm mb-2 text-center" data-countup='{"endValue":238}'>0</h2>
-                <h6 class="opacity-70 fs-8 fw-normal lh-lg mb-0 text-center">Seats are available right now with support</h6>
-              </div>
-              <div class="col-12 col-md-4">
-                <h2 class="fs-3 fw-bold lh-sm mb-2 text-center" data-countup='{"endValue":1395,"autoIncreasing":true}'>0</h2>
-                <h5 class="opacity-70 fs-8 fw-normal lh-lg mb-0 text-center">People are using our co-work spaces right now</h5>
-              </div>
-            </div>
-          </section>
-          <section class="container mb-8 mb-lg-13" id="about">
-            <div class="row align-items-center">
-              <div class="col-12 col-lg-6 col-xl-7"><img class="img-fluid" src="{{ asset('landing/assets/img/Hero/Team.webp') }}" alt="" /></div>
-              <div class="col-12 col-lg-6 col-xl-5">
-                <div class="row justify-content-center justify-content-lg-start">
-                  <div class="col-sm-10 col-md-8 col-lg-12">
-                    <h2 class="fs-4 fs-lg-3 fw-bold mb-2 text-center text-lg-start">Collaborate with team members.</h2>
-                    <p class="fs-8 mb-4 mb-lg-5 lh-lg text-center text-lg-start fw-normal">We share common trends and strategies for improving your rental income</p>
-                  </div>
-                  <div class="col-12">
-                    <div class="mb-x1 mb-lg-3">
-                      <h5 class="fs-8 fw-bold lh-lg mb-1">Project Based Groups </h5>
-                      <p class="mb-0 lh-xl">You can use this module to monitor ongoing projects seamlessly.</p>
-                    </div>
-                    <div>
-                      <h5 class="fs-8 fw-bold lh-lg mb-1"> Unlimited Video Meetings</h5>
-                      <p class="lh-xl mb-0">Conduct unlimited video meetings with us for better business operations.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-          <section class="container mb-8 mb-lg-13">
-            <div class="row align-items-center">
-              <div class="col-12 col-lg-6 col-xl-5 order-lg-1"><img class="img-fluid" src="{{ asset('landing/assets/img/Hero/Collaborator.webp') }}" alt="" /></div>
-              <div class="col-12 col-lg-6 col-xl-7">
-                <div class="row justify-content-center justify-content-lg-start">
-                  <div class="col-sm-10 col-md-8 col-lg-11">
-                    <h2 class="fs-4 fs-lg-3 fw-bold mb-2 text-center text-lg-start"> Organize remote team fast & easily.</h2>
-                    <p class="fs-8 mb-4 mb-lg-5 lh-lg text-center text-lg-start fw-normal">Organizing and managing your remote teams has never been this easy!</p>
-                  </div>
-                  <div class="col-12">
-                    <div class="mb-x1 mb-lg-3">
-                      <h5 class="fs-8 fw-bold lh-lg mb-1">Create Unlimited Teams </h5>
-                      <p class="b-0 lh-xl">Create unlimited teams and boost productivity with efficient collaboration.</p>
-                    </div>
-                    <div>
-                      <h5 class="fs-8 fw-bold lh-lg mb-1"> Hasslefree Chat with Everyone</h5>
-                      <p class="lh-xl mb-0">With unique and simple UIs, keep yourself connected across all the teams.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-          <section class="container mb-8 mb-lg-11">
-            <div class="row justify-content-center">
-              <div class="col-md-8 col-lg-7">
-                <h3 class="fs-4 fs-lg-3 fw-bold text-center mb-2 mb-lg-x1"> How does <span class="text-nowrap">it work?</span></h3>
-                <p class="fs-8 mb-7 mb-lg-8 text-center lh-lg">You can use this as it is or tweak it as you seem necessary. you seem necessary.</p>
-              </div>
-              <div class="col-12">
-                <div class="row g-sm-2 g-lg-3 align-items-center timeline">
-                  <div class="col-12 col-lg-4 d-flex flex-row flex-lg-column justify-content-center gap-2 gap-sm-x1 gap-md-4 gap-lg-0">
-                    <div class="timeline-step-1 w-25 w-lg-100 mb-4 mb-lg-5 mb-xl-6">
-                      <div class="timeline-item d-flex justify-content-center">
-                        <div class="timeline-icon bg-primary rounded-circle d-flex justify-content-center align-items-center"><span class="fs-6 fs-lg-5 fs-xl-4 text-white"> 1</span></div>
-                      </div>
-                    </div>
-                    <div class="py-1 py-lg-0 px-lg-5 w-75 w-sm-50 w-lg-100 timeline-content">
-                      <h6 class="fs-8 fw-bold text-lg-center lh-lg mb-2">Install App</h6>
-                      <p class="text-lg-center lh-xl mb-0">Install the app with a single click.</p>
-                    </div>
-                  </div>
-                  <div class="col-12 col-lg-4 d-flex flex-row flex-lg-column justify-content-center gap-2 gap-sm-x1 gap-md-4 gap-lg-0">
-                    <div class="timeline-step-2 w-25 w-lg-100 mb-4 mb-lg-5 mb-xl-6">
-                      <div class="timeline-item d-flex justify-content-center">
-                        <div class="timeline-icon bg-success rounded-circle d-flex justify-content-center align-items-center"><span class="fs-6 fs-lg-5 fs-xl-4 text-white"> 2</span></div>
-                      </div>
-                    </div>
-                    <div class="py-1 py-lg-0 px-lg-5 w-75 w-sm-50 w-lg-100 timeline-content">
-                      <h6 class="fs-8 fw-bold text-lg-center lh-lg mb-2">Add Team Members</h6>
-                      <p class="text-lg-center lh-xl mb-0">Start with adding team members to <span class="text-nowrap">your channels. </span></p>
-                    </div>
-                  </div>
-                  <div class="col-12 col-lg-4 d-flex flex-row flex-lg-column justify-content-center gap-2 gap-sm-x1 gap-md-4 gap-lg-0">
-                    <div class="timeline-step-3 position-relative z-1 overflow-hidden w-25 w-lg-100 mb-4 mb-lg-5 mb-xl-6">
-                      <div class="timeline-item d-flex justify-content-center">
-                        <div class="timeline-icon bg-info rounded-circle d-flex justify-content-center align-items-center"><span class="fs-6 fs-lg-5 fs-xl-4 text-white"> 3</span></div>
-                      </div>
-                    </div>
-                    <div class="py-1 py-lg-0 px-lg-5 w-75 w-sm-50 w-lg-100 timeline-content">
-                      <h6 class="fs-8 fw-bold text-lg-center lh-lg mb-2">Start Rolling</h6>
-                      <p class="text-lg-center lh-xl mb-0">Start operating your business in a simpler way <span class="text-nowrap">and grow!</span></p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-          <section class="experience position-relative overflow-hidden" id="service">
+
+          {{-- <section class="experience position-relative overflow-hidden" id="service">
             <div class="container">
               <div class="row justify-content-center">
                 <div class="col-12">
-                  <div class="position-relative z-1 text-center mb-8 mb-lg-9 video-player-paused" data-video-player-container="data-video-player-container"><video class="w-100 h-100 rounded-4" src="{{ asset('landing/assets/video/Tech_video.mp4') }}" poster="{{ asset('landing/assets/img/Hero/experiences.webp') }}" type="video/mp4" data-video-player="data-video-player"></video>
-                    <div class="overlay position-absolute top-0 bottom-0 start-0 end-0 rounded-4 bg-1100 object-cover" data-overlay="data-overlay"> </div><button class="btn play-button position-absolute justify-content-center align-items-center bg-white rounded-circle cursor-pointer" data-play-button="data-play-button"> <img class="play-icon w-25" src="{{ asset('landing/assets/img/illustrations/play-solid.svg') }}" alt="" data-play-icon="data-play-icon" /><img class="pause-icon w-25" src="{{ asset('landing/assets/img/illustrations/pause-solid.svg') }}" alt="" data-pause-icon="data-pause-icon" /></button>
+                  <div class="position-relative z-1 text-center mb-8 mb-lg-9 video-player-paused" data-video-player-container="data-video-player-container">
+                    <video class="w-100 h-100 rounded-4" src="{{ asset('landing/assets/video/Tech_video.mp4') }}" poster="{{ asset('landing/assets/img/Hero/experiences.webp') }}" type="video/mp4" data-video-player="data-video-player">
+                    </video>
+                    <div class="overlay position-absolute top-0 bottom-0 start-0 end-0 rounded-4 bg-1100 object-cover" data-overlay="data-overlay"> </div>
+                    <button class="btn play-button position-absolute justify-content-center align-items-center bg-white rounded-circle cursor-pointer" data-play-button="data-play-button">
+                        <img class="play-icon w-25" src="{{ asset('landing/assets/img/illustrations/play-solid.svg') }}" alt="" data-play-icon="data-play-icon" />
+                        <img class="pause-icon w-25" src="{{ asset('landing/assets/img/illustrations/pause-solid.svg') }}" alt="" data-pause-icon="data-pause-icon" />
+                    </button>
                     <div class="position-absolute dots d-none d-sm-block"><img class="img-fluid w-100" src="{{ asset('landing/assets/img/illustrations/Dots.webp') }}" alt="" /></div>
                   </div>
                 </div>
@@ -464,13 +356,13 @@
             </div>
             <div class="position-absolute bottom-0 end-0 z-n1 d-none d-lg-block"><img src="{{ asset('landing/assets/img/illustrations/Green_dots.svg') }}" alt="" /></div>
             <div class="position-relative bottom-0 start-0 z-1"><img class="img-fluid w-100" src="{{ asset('landing/assets/img/illustrations/Wave_3.svg') }}" alt="" /></div>
-          </section>
-        </div><button class="btn scroll-to-top text-white rounded-circle d-flex justify-content-center align-items-center bg-primary" data-scroll-top="data-scroll-top"><span class="uil uil-angle-up"></span></button>
+          </section> --}}
+        {{-- </div><button class="btn scroll-to-top text-white rounded-circle d-flex justify-content-center align-items-center bg-primary" data-scroll-top="data-scroll-top"><span class="uil uil-angle-up"></span></button> --}}
         <footer class="pt-7 pt-lg-8">
           <div class="container">
-            <div class="row gy-4 g-md-3 border-bottom pb-8 pb-lg-9 justify-content-center">
+            {{-- <div class="row gy-4 g-md-3 border-bottom pb-8 pb-lg-9 justify-content-center">
               <div class="col-6 col-md-3">
-                <p class="mb-2 lh-lg ls-1">Company</p>
+                <p class="mb-2 lh-lg ls-1">Pondok Pesantren Nurul Iman Al-Hasanah </p>
                 <ul class="list-unstyled text-1100">
                   <li class="mb-1"> <a class="ls-1 lh-xl" href="#about">About us</a></li>
                   <li class="mb-1"> <a class="ls-1 lh-xl" href="#contact"> Contact us</a></li>
@@ -478,34 +370,10 @@
                   <li class="mb-1"> <a class="ls-1 lh-xl" href="#!">Press</a></li>
                 </ul>
               </div>
-              <div class="col-6 col-md-3">
-                <p class="mb-2 lh-lg">Product</p>
-                <ul class="list-unstyled text-1100">
-                  <li class="mb-1"> <a class="ls-1 lh-xl" href="#!">Features</a></li>
-                  <li class="mb-1"> <a class="ls-1 lh-xl" href="#!"> Pricing</a></li>
-                  <li class="mb-1"> <a class="ls-1 lh-xl" href="#!"> News</a></li>
-                  <li class="mb-1"> <a class="ls-1 lh-xl" href="#!"> Help desk</a></li>
-                  <li class="mb-1"><a class="ls-1 lh-xl" href="#!"> Support</a></li>
-                </ul>
-              </div>
-              <div class="col-6 col-md-3">
-                <p class="mb-2 lh-lg"> Legal</p>
-                <ul class="list-unstyled text-1100">
-                  <li class="mb-1"> <a class="ls-1 lh-xl" href="#!">Privacy</a></li>
-                  <li class="mb-1"> <a class="ls-1 lh-xl" href="#!"> Terms & Conditions</a></li>
-                  <li class="mb-1"> <a class="ls-1 lh-xl" href="#!"> Return Policy</a></li>
-                </ul>
-              </div>
-              <div class="col-6 col-md-3 d-md-flex flex-column align-items-md-end pe-md-0">
-                <div>
-                  <p class="mb-2 lh-lg"> Download Our App</p>
-                  <div class="mb-1 mb-lg-2"> <a class="border-0 p-0 bg-transparent cursor-pointer rounded-1" href="#!"> <img class="img-fluid" src="{{ asset('landing/assets/img/logos/App_Store.webp') }}" alt="{{ asset('landing/assets/img/logos/App_Store.webp') }}" /></a></div><a class="border-0 p-0 bg-transparent cursor-pointer rounded-1" href="#!"> <img class="img-fluid" src="{{ asset('landing/assets/img/logos/Play_Store.webp') }}" alt="{{ asset('landing/assets/img/logos/Play_Store.webp') }}" /></a>
-                </div>
-              </div>
-            </div>
+            </div> --}}
             <div class="row gy-2 py-3 justify-content-center justify-content-md-between">
               <div class="col-auto ps-0">
-                <p class="text-center text-md-start lh-xl text-1100"> © 2024 Copyright, All Right Reserved, Made by <a class="fw-semi-bold" href="https://themewagon.com/">ThemeWagon </a>❤️</p>
+                <p class="text-center text-md-start lh-xl text-1100"> © 2024 Copyright, All Right Reserved, Made by Ponpes</p>
               </div>
               <div class="col-auto pe-0"><a class="icons fs-8 me-3 me-md-0 ms-md-3 cursor-pointer" href="#!"><span class="uil uil-twitter"> </span></a><a class="icons fs-8 me-3 me-md-0 ms-md-3 cursor-pointer" href="#!"><span class="uil uil-instagram"></span></a><a class="icons fs-8 me-3 me-md-0 ms-md-3 cursor-pointer" href="#!"><span class="uil uil-linkedin"> </span></a></div>
             </div>
