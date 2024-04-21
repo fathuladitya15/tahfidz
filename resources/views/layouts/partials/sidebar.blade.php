@@ -88,7 +88,7 @@
                         </a>
                     </li>
                 @endrole
-                <li class="menu-item {{ menuActive(['hafalan-index']) }}">
+                <li class="menu-item {{ menuActive(['hafalan-index','hafalan-show']) }}">
                     <a href="{{ route('hafalan-index') }}" class="menu-link">
                       <i class="menu-icon tf-icons bx bx-paperclip"></i>
                       <div data-i18n="Analytics">Data Hafalan</div>

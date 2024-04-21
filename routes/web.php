@@ -39,7 +39,13 @@ Route::group(['middleware' => ['revalidated']], function () {
             Route::get('index',[HafalanController::class,'index'])->name('hafalan-index');
             Route::get('data',[HafalanController::class,'data'])->name('hafalan-data');
             Route::post('store',[HafalanController::class,'store'])->name('hafalan-simpan');
-            Route::geT('show/{id}',[HafalanController::class,'show'])->name('hafalan-show');
+            Route::get('show/{id}',[HafalanController::class,'show'])->name('hafalan-show');
+            Route::get('data/{id}',[HafalanController::class,'dataById'])->name('hafalan-data-id');
+            Route::post('upload-audio',[HafalanController::class,'uploadAudio'])->name('upload-audio');
+
+            Route::delete('halafan/dalete',[HafalanController::class,'delData'])->name('halafan-delete');
+            Route::delete('halafan/audio-dalete',[HafalanController::class,'delAudio'])->name('halafan-delete-audio');
+
         });
     });
 });

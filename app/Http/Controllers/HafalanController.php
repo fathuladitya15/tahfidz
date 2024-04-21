@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use DB;
 use Auth;
 use DataTables;
+use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Hafalan;
@@ -21,9 +22,7 @@ class HafalanController extends Controller
     function __construct() {
         $this->middleware('auth');
     }
-    /**
-     * Display a listing of the resource.
-     */
+
     public function index()
     {
         $roles = Auth::user()->getRoleNames()->join(', ');
@@ -42,8 +41,6 @@ class HafalanController extends Controller
         }
         else if($roles == 'teacher') {
             $students   = User::role('student')->get();
-            $getSurat   = $this->fetchDataFromApi();
-            dd($getSurat);
             return view('layouts.hafalan.index',compact('students'));
         }
         else if($roles == 'admin') {
@@ -54,6 +51,7 @@ class HafalanController extends Controller
         }
 
     }
+
     public function store(Request $request)
     {
         $save = Hafalan::create([
@@ -86,29 +84,12 @@ class HafalanController extends Controller
             return response()->json(['status' => TRUE,'pesan' => 'Hafalan tersimpan' ,],200);
         }
         return response()->json(['status' => TRUE,'error' => 'Gagal menyimpan' ,],200);
-
-
-
     }
 
     public function show($id) {
-        $Get            = Hafalan::find($id);
-        $urlHalaman     = 'http://api.alquran.cloud/v1/page/1/quran-uthmani';
-        $urlJuz         = 'http://api.alquran.cloud/v1/juz/1/quran-uthmani';
-        $urlSurah       = 'http://api.alquran.cloud/v1/surah/1';
 
-        $halaman        = $this->curl($urlHalaman);
-        $juz            = $this->curl($urlJuz);
-        $DetailSurah    = $this->curl($urlSurah);
-
-        $arrJuz         = [];
-        foreach ($juz['data']['surahs'] as $key => $value) {
-            $arrJuz[]   =   [
-                'namaSurat' =>  $value['englishName'],
-                'detail'    =>  $this->get_ayat_by_surah('http://api.alquran.cloud/v1/surah/'.$value['number']),
-            ];
-        }
-        dd($arrJuz,$juz['data'],$DetailSurah['data']['ayahs']);
+        $dataUser         = User::find($id);
+        return view('layouts.hafalan.detail',compact('id','dataUser'));
     }
 
     function data (Request $request) {
@@ -134,7 +115,7 @@ class HafalanController extends Controller
             $cekAudio = Audio::where('hafalan_id',$row->id)->count();
             if($cekAudio == 1) {
                 $dataAudio = Audio::where('hafalan_id',$row->id)->first();
-                $button = '<button class="btn btn-sm btn-primary played" data-id="'.$row->id.'" data-src="'.asset($dataAudio->path).'"  ><i class="bx bx-play"></i></button>';
+                $button = '<button class="btn btn-sm btn-primary played" data-id="'.$row->student_id.'" data-src="'.asset($dataAudio->path).'"  ><i class="bx bx-play"></i></button>';
             }else {
                 $button = "";
 
@@ -142,7 +123,7 @@ class HafalanController extends Controller
             return $button;
         })
         ->addColumn('aksi',function($row) {
-            $b  = '<a href="'.route('hafalan-show',['id' => $row->id]).'">Detail</a>';
+            $b  = '<a href="'.route('hafalan-show',['id' => $row->student_id]).'" class="btn btn-primary">Detail</a>';
             return $b;
         })
         ->rawColumns(['nama_siswa','audio','aksi','ayat'])
@@ -151,6 +132,98 @@ class HafalanController extends Controller
         return $dt;
 
     }
+
+    function dataById(Request $request,$id) {
+        $data   = Hafalan::where('student_id',$id)->get();
+        $dt     = DataTables::of($data)
+        ->addIndexColumn()
+        ->addColumn('ayat',function ($row) {
+            $r = $row->ayat_start.'-'.$row->ayat_end;
+            return $r;
+        })
+        ->addColumn('audio',function($row) {
+            $cekAudio = Audio::where('hafalan_id',$row->id)->count();
+            if($cekAudio == 1) {
+                $dataAudio = Audio::where('hafalan_id',$row->id)->first();
+                $button = '<button class="btn btn-sm btn-success played" data-id="'.$row->student_id.'" data-src="'.asset($dataAudio->path).'"  ><i class="bx bx-play"></i></button>';
+                $button .= '&nbsp;';
+                $button .= '<button class="btn btn-sm btn-danger delAudio" data-id="'.$row->id.'" ><i class="bx bxs-trash"></i></button>';
+                $button .= '&nbsp;';
+                $button .= '<button class="btn btn-sm btn-info delData" data-id="'.$row->id.'" ><i class="bx bxs-trash"></i></button>';
+            }else {
+                $button = '<button class="btn btn-sm btn-primary addAudio" data-id="'.$row->id.'" ><i class="bx bx-plus-circle"></i></button>';
+                $button .= '&nbsp;';
+                $button .= '<button class="btn btn-sm btn-info delData" data-id="'.$row->id.'" ><i class="bx bxs-trash"></i></button>';
+
+
+            }
+            return $button;
+        })
+        ->rawColumns(['audio','ayat'])
+        ->make(true);
+        return $dt;
+    }
+
+    function uploadAudio(Request $request) {
+        $cekAudio   = Audio::where('hafalan_id',$request->hafalan_id)->count();
+
+        if($cekAudio == 0) {
+            $validator = Validator::make($request->all(), [
+                'audioFile'         => 'file|mimes:audio/mpeg,mpga,mp3,wav|max:10000',
+            ],[
+                'audioFile.mimes'   => 'File audio yang di izinkan mpeg,mpga,mp3,wav',
+                'audioFile.max'     =>  'Maksimal ukuran file 1 Mb',
+            ]);
+            if ($validator->fails()) {
+                return response()->json(['status' => FALSE,'error' => $validator->errors()->first()]);
+            }
+            $file           = $request->file('audioFile');
+            $fileName       = time() . '_' . $file->getClientOriginalName();
+            $path           = 'audio/'.$fileName;
+            $file->move(public_path('audio'), $fileName); // Menyimpan file di direktori 'public/audio'
+
+            $save = Audio::create(['hafalan_id' => $request->hafalan_id,'path' => $path]);
+            return response()->json(['status' => TRUE,'pesan' => 'Audio tersimpan' ,],200);
+
+        }else {
+            return response()->json($cekAudio,200);
+        return response()->json(['status' => TRUE,'error' => 'Gagal menyimpan' ,],200);
+
+        }
+    }
+
+    function delAudio(Request $request) {
+        $pathAudio  = Audio::where("hafalan_id",$request->hafalan_id)->first();
+        $filePath   = public_path($pathAudio->path);
+        File::delete($filePath);
+
+        $deleteDataAudio = Audio::findOrFail($pathAudio->id);
+        $deleteDataAudio->delete();
+
+        return response()->json(['status' => TRUE,'pesan' => 'Audio berhasil dihapus']);
+    }
+
+    function delData(Request $request) {
+        $dataHafalan    = Hafalan::findOrFail($request->hafalan_id);
+
+        $cekAudio       = Audio::where('hafalan_id',$request->hafalan_id)->count();
+        if($cekAudio == 1) {
+            $idAudio    = Audio::where('hafalan_id',$request->hafalan_id)->first();
+            $filePath   = public_path($idAudio->path);
+            File::delete($filePath);
+
+            $delAudio   = Audio::findOrFail($idAudio->id);
+            $delAudio->delete();
+
+
+            return response()->json(['status' => TRUE, 'pesan' => 'Hafalan dan audio berhasil dihapus']);
+
+        }else {
+            $dataHafalan->delete();
+            return response()->json(['pesan' => 'Hafalan berhasil dihapus','status' => TRUE]);
+        }
+    }
+
 
     function get_ayat_by_surah($url) {
         $ch = curl_init();
