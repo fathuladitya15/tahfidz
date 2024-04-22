@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use File;
+use Auth;
 use Validator;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -23,41 +25,6 @@ class ProfileController extends Controller
 
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(User $user)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(User $user)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, User $user)
     {
         if ($request->hasFile('files')) {
@@ -70,12 +37,19 @@ class ProfileController extends Controller
             if ($validator->fails()) {
                 return response()->json(['status' => FALSE,'error' => $validator->errors()->first()]);
             }
+            $cekFile        = User::find(Auth::user()->id)->foto;
+
+            if (File::exists($cekFile)) {
+                File::delete($cekFile);
+            }
             $file           = $request->file('files');
             $fileName       = time() . '_' . $file->getClientOriginalName();
-            $path           = 'audio/'.$fileName;
-            return response()->json(['id' => Auth::user()->id,'pesan' => 'Foro berhasil di unggah'],200);
-            // $file->move(public_path('assets/img/profile'), $fileName); // Menyimpan file di direktori 'public/audio'
-            // Audio::create(['hafalan_id' => $save->id,'path' => $path]);
+            $path           = 'assets/img/profile/'.$fileName;
+            $file->move(public_path('assets/img/profile'), $fileName); // Menyimpan file di direktori 'public/profile'
+            $updateUser         = User::find(Auth::user()->id);
+            $updateUser->foto   = $path;
+            $updateUser->update();
+            return response()->json(['id' => Auth::user()->id,'pesan' => 'Foro berhasil di unggah',],200);
         }
         return response()->json(['pesan' => "Error",'status' => 200]);
     }

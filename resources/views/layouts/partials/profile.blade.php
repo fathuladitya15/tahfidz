@@ -86,7 +86,7 @@
                 <div class="modal-body">
                     <div class="row g-2">
                         <div class="col mb-0">
-                            <label for="FileProfile" class="form-label">Lembar Hafalan</label>
+                            <label for="FileProfile" class="form-label">Upload file</label>
                             <input type="file" id="FileProfile" name="files" class="form-control" required />
                         </div>
                     </div>
