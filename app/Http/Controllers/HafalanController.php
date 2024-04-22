@@ -224,7 +224,6 @@ class HafalanController extends Controller
         }
     }
 
-
     function get_ayat_by_surah($url) {
         $ch = curl_init();
 

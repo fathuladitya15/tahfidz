@@ -27,6 +27,7 @@ Route::group(['middleware' => ['revalidated']], function () {
     Route::middleware('auth')->group(function() {
         Route::get('home',[HomeController::class,'index'])->name('home');
         Route::get('profile',[ProfileController::class,'index'])->name('profile');
+        Route::post('update-profile',[ProfileController::class,'update'])->name('profile-update');
         Route::prefix('user')->group(function() {
             Route::get('index',[UserController::class,'index'])->name('user-index');
             Route::get('create',[UserController::class,'create'])->name('user-create');

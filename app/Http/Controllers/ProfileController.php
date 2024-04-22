@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Validator;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -59,7 +60,24 @@ class ProfileController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        //
+        if ($request->hasFile('files')) {
+            $validator = Validator::make($request->all(), [
+                'files'         => 'file|mimes:jpeg,png,jpg|max:1000',
+            ],[
+                'files.mimes'   => 'File audio yang di izinkan jpeg,jpg,png',
+                'files.max'     =>  'Maksimal ukuran file 1 Mb',
+            ]);
+            if ($validator->fails()) {
+                return response()->json(['status' => FALSE,'error' => $validator->errors()->first()]);
+            }
+            $file           = $request->file('files');
+            $fileName       = time() . '_' . $file->getClientOriginalName();
+            $path           = 'audio/'.$fileName;
+            return response()->json(['id' => Auth::user()->id,'pesan' => 'Foro berhasil di unggah'],200);
+            // $file->move(public_path('assets/img/profile'), $fileName); // Menyimpan file di direktori 'public/audio'
+            // Audio::create(['hafalan_id' => $save->id,'path' => $path]);
+        }
+        return response()->json(['pesan' => "Error",'status' => 200]);
     }
 
     /**

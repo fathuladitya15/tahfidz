@@ -21,11 +21,12 @@
         <div class="d-flex align-items-start align-items-sm-center gap-4">
           <img src="{{ Auth::user()->foto == null ? asset("assets/img/avatars/1.png") : Auth::user()->foto }}" alt="user-avatar" class="d-block rounded" height="100" width="100" id="uploadedAvatar"/>
           <div class="button-wrapper">
-            <label for="upload" class="btn btn-primary me-2 mb-4" tabindex="0">
+            {{-- <label for="upload" class="btn btn-primary me-2 mb-4" tabindex="0">
               <span class="d-none d-sm-block">Unggah foto profile</span>
               <i class="bx bx-upload d-block d-sm-none"></i>
               <input type="file" id="upload" class="account-file-input" hidden accept="image/png, image/jpeg" name="foto"/>
-            </label>
+            </label> --}}
+            <button class="btn btn-primary me-2 mb-4 UploadProfile">Unggah Foto Profil</button>
             <button type="button" class="btn btn-outline-secondary account-image-reset mb-4">
               <i class="bx bx-reset d-block d-sm-none"></i>
               <span class="d-none d-sm-block">Reset</span>
@@ -71,4 +72,69 @@
     </div>
   </div>
 </div>
+
+<!-- Modal Upload Profile -->
+<div class="modal fade" id="uploadProfileModal" tabindex="-1" role="dialog" aria-labelledby="uploadProfileModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel1">Upload Profile</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="{{ route('profile-update') }}" enctype="multipart/form-data"  method="POST" id="uploadImage" >
+                @csrf
+                <div class="modal-body">
+                    <div class="row g-2">
+                        <div class="col mb-0">
+                            <label for="FileProfile" class="form-label">Lembar Hafalan</label>
+                            <input type="file" id="FileProfile" name="files" class="form-control" required />
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                        Tutup
+                    </button>
+                    <button type="submit" class="btn btn-primary">Upload Foto</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 @endsection
+@push('js')
+<script>
+    $(document).on('click','.UploadProfile',function() {
+        $("#uploadProfileModal").modal('show');
+    })
+
+    $("#uploadImage").submit(function(e) {
+        e.preventDefault();
+        var formData = new FormData($(this)[0]);
+        $.ajax({
+            url : $(this).attr('action'),
+            type : $(this).attr('method'),
+            data: formData,
+            processData: false,
+            contentType: false,
+            beforeSend:function() {
+
+            },success: function(response) {
+                console.log(response);
+
+            },error: function(xhr, status, error) {
+                console.log(xhr);
+                iziToast.error({
+                    title: 'Error',
+                    message: 'Terjadi kesalahan',
+                    position: 'topRight'
+                });
+            },complete: function() {
+                $("#uploadProfileModal").modal('hide');
+                $("#uploadImage").trigger('reset');
+
+            }
+        })
+    })
+</script>
+@endpush
